@@ -1,0 +1,12 @@
+D:\Project\Source\CSharp\RandList\RandList.Core\bin\x64\Debug\net7.0\RandList.Core.deps.json
+D:\Project\Source\CSharp\RandList\RandList.Core\bin\x64\Debug\net7.0\RandList.Core.dll
+D:\Project\Source\CSharp\RandList\RandList.Core\bin\x64\Debug\net7.0\RandList.Core.pdb
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\RandList.Core.csproj.AssemblyReference.cache
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\RandList.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\RandList.Core.AssemblyInfoInputs.cache
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\RandList.Core.AssemblyInfo.cs
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\RandList.Core.csproj.CoreCompileInputs.cache
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\RandList.Core.dll
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\refint\RandList.Core.dll
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\RandList.Core.pdb
+D:\Project\Source\CSharp\RandList\RandList.Core\obj\x64\Debug\net7.0\ref\RandList.Core.dll
