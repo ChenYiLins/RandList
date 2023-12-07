@@ -5,8 +5,6 @@ using RandList.Core.Contracts.Services;
 using RandList.Core.Helpers;
 using RandList.Helpers;
 using RandList.Models;
-
-using Windows.ApplicationModel;
 using Windows.Storage;
 
 namespace RandList.Services;

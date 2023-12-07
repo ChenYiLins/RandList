@@ -3,53 +3,162 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="using:RandList.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
+    xmlns:xaml="using:Microsoft.UI.Xaml"
+    Background="{ThemeResource LayerOnMicaBaseAltFillColorDefaultBrush}"
     mc:Ignorable="d">
+    <Page.Resources>
+        <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </Page.Resources>
 
     <Grid x:Name="ContentArea">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid
+            x:Name="AppTitleBar"
+            Grid.Row="0"
+            Height="16"
+            Margin="8,8,0,0"
+            VerticalAlignment="Top"
+            Canvas.ZIndex="1"
+            IsHitTestVisible="True">
+            <Image
+                Width="16"
+                Height="16"
+                HorizontalAlignment="Left"
+                Source="/Assets/WindowIcon.ico" />
+            <TextBlock
+                x:Name="AppTitleBarText"
+                Margin="28,0,0,0"
+                VerticalAlignment="Center"
+                Style="{StaticResource CaptionTextBlockStyle}"
+                Text="RandList"
+                TextWrapping="NoWrap" />
+        </Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" VerticalAlignment="Top">
+            <MenuBar>
+                <MenuBarItem x:Uid="MenuBarItem_File">
+                    <MenuFlyoutSubItem x:Name="MenuFlyoutSubItemFileList" x:Uid="MenuFlyoutSubItem_File_List" />
+                </MenuBarItem>
+
+                <MenuBarItem x:Uid="MenuBarItem_Edit">
+                    <MenuFlyoutSubItem x:Uid="MenuFlyoutSubItem_Edit_Mode">
+                        <RadioMenuFlyoutItem
+                            x:Name="RadioMenuFlyoutItemEditModeOfOne"
+                            x:Uid="RadioMenuFlyoutItem_Edit_Mode_One"
+                            GroupName="Edit_Mode"
+                            IsChecked="True" />
+                        <!--  模式1：随机起点顺序  -->
+                        <RadioMenuFlyoutItem
+                            x:Name="RadioMenuFlyoutItemEditModeOfTwo"
+                            x:Uid="RadioMenuFlyoutItem_Edit_Mode_Two"
+                            GroupName="Edit_Mode" />
+                        <!--  模式2：固定起点顺序  -->
+                    </MenuFlyoutSubItem>
+                    <MenuFlyoutSubItem x:Uid="MenuFlyoutSubItem_Edit_Symbol">
+                        <RadioMenuFlyoutItem
+                            x:Name="RadioMenuFlyoutItemEditSymbolOfOne"
+                            x:Uid="RadioMenuFlyoutItem_Edit_Symbol_One"
+                            GroupName="Edit_Symbol"
+                            IsChecked="True" />
+                        <!--  符号1：空格  -->
+                        <RadioMenuFlyoutItem
+                            x:Name="RadioMenuFlyoutItemEditSymbolOfTwo"
+                            x:Uid="RadioMenuFlyoutItem_Edit_Symbol_Two"
+                            GroupName="Edit_Symbol" />
+                        <!--  符号2：换行符  -->
+                    </MenuFlyoutSubItem>
+                </MenuBarItem>
+
+                <MenuBarItem x:Uid="MenuBarItem_Spaw">
+                    <MenuFlyoutItem
+                        x:Name="MenuFlyoutItemSpawOfStartSpaw"
+                        x:Uid="MenuFlyoutItem_Spaw_StartSpaw"
+                        Click="MenuFlyoutItem_Click" />
+                </MenuBarItem>
+
+                <MenuBarItem x:Uid="MenuBarItem_About">
+                    <MenuFlyoutItem
+                        x:Name="MenuFlyoutItemAboutOfAbout"
+                        x:Uid="MenuFlyoutItem_About_About"
+                        Click="MenuFlyoutItem_Click" />
+                    <MenuFlyoutSubItem x:Uid="MenuFlyoutSubItem_About_Theme">
+                        <RadioMenuFlyoutItem
+                            x:Uid="RadioMenuFlyoutItem_About_Theme_Default"
+                            Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}">
+                            <MenuFlyoutItem.CommandParameter>
+                                <xaml:ElementTheme>Default</xaml:ElementTheme>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+
+                        <RadioMenuFlyoutItem
+                            x:Uid="RadioMenuFlyoutItem_About_Theme_Light"
+                            Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
+                            <MenuFlyoutItem.CommandParameter>
+                                <xaml:ElementTheme>Light</xaml:ElementTheme>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+
+                        <RadioMenuFlyoutItem
+                            x:Uid="RadioMenuFlyoutItem_About_Theme_Dark"
+                            Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
+                            <MenuFlyoutItem.CommandParameter>
+                                <xaml:ElementTheme>Dark</xaml:ElementTheme>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+                    </MenuFlyoutSubItem>
+                </MenuBarItem>
+
+            </MenuBar>
+        </Grid>
 
         <ContentDialog
-            x:Uid="MainPage_Dialog"
-           x:Name="MainPageDialog">
+            x:Name="MainPageSpawDialog"
+            x:Uid="MainPage_Dialog_Spaw"
+            DefaultButton="Primary"
+            PrimaryButtonClick="MainPageSpawDialog_PrimaryButtonClick">
+            <TextBox x:Name="MainPageSpawDialogOfTextBox" x:Uid="MainPage_Dialog_Spaw_TextBox" />
         </ContentDialog>
-        
-        <TextBox
-            x:Name="MainPageTextBox"
-            FontSize="75"
-            Grid.Column="0"
-            Grid.Row="0"
-            TextAlignment="Center"
-            Text="别紧张"
-            IsReadOnly="True"
-            Margin="20"/>
 
-        <ComboBox
-            x:Name="MainPageComboBox"
-            Grid.Column="0"
-            Grid.Row="1"
-            PlaceholderText="选择名单"
-            Margin="20"
-            MinHeight="120"
-            MinWidth="445"/>
+        <ContentDialog
+            x:Name="MainPageAboutDialog"
+            x:Uid="MainPage_Dialog_About"
+            DefaultButton="Close">
+            <StackPanel Orientation="Horizontal">
+                <Image
+                    Width="16"
+                    Height="16"
+                    HorizontalAlignment="Left"
+                    Source="/Assets/WindowIcon.ico" />
+                <TextBlock x:Uid="MainPage_Dialog_About_TextBlock" Margin="6" />
+                <HyperlinkButton Content="GitHub" NavigateUri="https://github.com/ChenYiLins/RandList" />
+            </StackPanel>
+        </ContentDialog>
 
-        <Button
-            x:Name="MainPageButton"
-            Grid.Column="0"
+        <Grid
             Grid.Row="2"
-            Content="开始"
-            Margin="20"
-            MinHeight="120"
-            MinWidth="445"
-            Click="MainPageButton_Click"/>
+            Margin="16,8,16,16"
+            HorizontalAlignment="Stretch">
+            <Border
+                Margin="8,8,8,8"
+                Background="{ThemeResource LayerOnMicaBaseAltFillColorDefaultBrush}"
+                BorderBrush="{ThemeResource LayerOnMicaBaseAltFillColorSecondaryBrush}"
+                BorderThickness="1"
+                CornerRadius="8">
+                <TextBlock
+                    x:Name="MainPageTextBlock"
+                    Margin="8,8,8,8"
+                    IsTextSelectionEnabled="True"
+                    TextWrapping="Wrap" />
+            </Border>
+        </Grid>
     </Grid>
 </Page>

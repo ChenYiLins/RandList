@@ -1,78 +1,84 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
+﻿using IniParser;
+using Microsoft.UI;
 using Microsoft.UI.Windowing;
+using Microsoft.UI.Xaml;
 using RandList.Helpers;
 using Windows.Graphics;
 using Windows.UI.ViewManagement;
+using Windows.UI.WindowManagement;
 
 namespace RandList;
 
 public sealed partial class MainWindow : WindowEx
 {
-    //**************************
-    //定义SetWindowLong函数
-    [LibraryImport("user32.dll", EntryPoint = "SetWindowLongW")]
-    private static partial int SetWindowLong(IntPtr hWnd, int nIndex, long dwNewLong);
-    //**************************
-    //定义GetWindowLong函数
-    [LibraryImport("user32.dll", EntryPoint = "GetWindowLongW")]
-    private static partial int GetWindowLong(IntPtr hWnd, int nIndex);
-    //**************************
-    [LibraryImport("dwmapi.dll")]
-    private static partial int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
-    //**************************
+    private Microsoft.UI.Dispatching.DispatcherQueue dispatcherQueue;
 
-    //**************************
-    //定义全局变量
-    public static class GlobalVar
-    {
-        public static IntPtr hWnd;
-    }
-    //**************************
-    //定义常量
-    public const int GWL_STYLE = -16;
-    public const long MAXIMIZEBOX = 0x00010000L;
-    private const int DWMWA_USE_IMMERSIVE_DARK_MODE = 19;
-    //**************************
+    private UISettings settings;
+
+    // 获取程序运行路径
+    public static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory;
 
     public MainWindow()
     {
         InitializeComponent();
-        //*************************************************************************************
-        // Use 'this' rather than 'window' as variable if this is about the current window.获取窗口句柄
-        var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
-        GlobalVar.hWnd = hWnd;
-        Debug.WriteLine("***************");//测试代码
-        Debug.WriteLine("hWnd:" + Convert.ToString(hWnd));//测试代码
-        Debug.WriteLine("***************");//测试代码
-        //*************************************************************************************
+
         AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets/WindowIcon.ico"));
+        AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+        AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
+        AppWindow.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
         Content = null;
         Title = "AppDisplayName".GetLocalized();
-        //*************************************************************************************
-        long style = GetWindowLong(hWnd, GWL_STYLE); //获取窗口风格
-        style &= ~(MAXIMIZEBOX); //禁用最大化按钮
-        SetWindowLong(hWnd, GWL_STYLE, style); //设置窗口风格
-        AppWindow.MoveAndResize(new RectInt32 { X = 100, Y = 100, Width = 600, Height = 400 });
-        //*************************************************************************************
-        var uiSettings = new UISettings();
-        var color = uiSettings.GetColorValue(UIColorType.Background);
 
-        var useImmersiveDarkMode = 0;
-        if (color == Microsoft.UI.Colors.Black)
+        // Theme change code picked from https://github.com/microsoft/WinUI-Gallery/pull/1239
+        dispatcherQueue = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+        settings = new UISettings();
+        settings.ColorValuesChanged += Settings_ColorValuesChanged; // cannot use FrameworkElement.ActualThemeChanged event
+
+        if (File.Exists(PathApp + "AppWindow.ini"))
         {
-            // Dark mode is enabled
-            useImmersiveDarkMode = 1;
-            DwmSetWindowAttribute(hWnd, DWMWA_USE_IMMERSIVE_DARK_MODE, ref useImmersiveDarkMode, sizeof(int));
+            var parser = new FileIniDataParser();
+            var iniFile = parser.ReadFile(PathApp + "AppWindow.ini");
 
+            if (iniFile["AppWindow"]["PositionX"] != "")
+            {
+                var rect = new RectInt32
+                {
+                    X = Convert.ToInt32(iniFile["AppWindow"]["PositionX"]),
+                    Y = Convert.ToInt32(iniFile["AppWindow"]["PositionY"]),
+                    Width = Convert.ToInt32(iniFile["AppWindow"]["SizeWidth"]),
+                    Height = Convert.ToInt32(iniFile["AppWindow"]["SizeHeight"])
+                };
+                AppWindow.MoveAndResize(rect);
+            }
+            Closed += MainWindow_Closed;
         }
-        else
+
+    }
+
+    // this handles updating the caption button colors correctly when indows system theme is changed
+    // while the app is open
+    private void Settings_ColorValuesChanged(UISettings sender, object args)
+    {
+        // This calls comes off-thread, hence we will need to dispatch it to current app's thread
+        dispatcherQueue.TryEnqueue(() =>
         {
-            // Light mode is enabled
-            useImmersiveDarkMode = 0;
-            DwmSetWindowAttribute(hWnd, DWMWA_USE_IMMERSIVE_DARK_MODE, ref useImmersiveDarkMode, sizeof(int));
-        }
-        //*************************************************************************************
+            TitleBarHelper.ApplySystemThemeToCaptionButtons();
+        });
+    }
 
+    private void MainWindow_Closed(object sender, WindowEventArgs args)
+    {
+        // 保存窗口状态
+        if (File.Exists(PathApp + "AppWindow.ini"))
+        {
+            var parser = new FileIniDataParser();
+            var iniFile = parser.ReadFile(PathApp + "AppWindow.ini");
+
+            iniFile["AppWindow"]["PositionX"] = AppWindow.Position.X.ToString();
+            iniFile["AppWindow"]["PositionY"] = AppWindow.Position.Y.ToString();
+            iniFile["AppWindow"]["SizeWidth"] = AppWindow.Size.Width.ToString();
+            iniFile["AppWindow"]["SizeHeight"] = AppWindow.Size.Height.ToString();
+            parser.WriteFile(PathApp + "AppWindow.ini", iniFile);
+        }
     }
 }

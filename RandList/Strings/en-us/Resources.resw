@@ -123,4 +123,89 @@
   <data name="AppDescription" xml:space="preserve">
     <value>RandList</value>
   </data>
+  <data name="Main_Title.Text" xml:space="preserve">
+    <value>Main</value>
+    <comment>Page title for MainPage</comment>
+  </data>
+  <data name="MainPage_Dialog_Spaw.CloseButtonText" xml:space="preserve">
+    <value>Cannel</value>
+  </data>
+  <data name="MainPage_Dialog_Spaw.PrimaryButtonText" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="MainPage_Dialog_Spaw.Title" xml:space="preserve">
+    <value>Now hey we go</value>
+  </data>
+  <data name="MainPage_Dialog_Spaw_TextBox.Header" xml:space="preserve">
+    <value>Plz text how many people u need</value>
+  </data>
+  <data name="MenuBarItem_About.Title" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MenuBarItem_Edit.Title" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="MenuBarItem_File.Title" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="MenuBarItem_Spaw.Title" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="MenuFlyoutItem_About_About.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MenuFlyoutItem_Spaw_StartSpaw.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="MenuFlyoutSubItem_About_Theme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="MenuFlyoutSubItem_Edit_Mode.Text" xml:space="preserve">
+    <value>How do u want to run</value>
+  </data>
+  <data name="MenuFlyoutSubItem_File_List.Text" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_About_Theme_Dark.Text" xml:space="preserve">
+    <value>Darkness</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_About_Theme_Default.Text" xml:space="preserve">
+    <value>It's uesed to ur pc</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_About_Theme_Light.Text" xml:space="preserve">
+    <value>Mr sun</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Mode_One.Text" xml:space="preserve">
+    <value>Let's start random</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Mode_Two.Text" xml:space="preserve">
+    <value>One by one</value>
+  </data>
+  <data name="MainPage_Dialog_About.CloseButtonText" xml:space="preserve">
+    <value>I got it</value>
+  </data>
+  <data name="MainPage_Dialog_About.Title" xml:space="preserve">
+    <value>About this program</value>
+  </data>
+  <data name="MainPage_Dialog_About_TextBlock.Text" xml:space="preserve">
+    <value>RandList Version 1.1.0</value>
+  </data>
+  <data name="WarningWords_BiggerSpawNum" xml:space="preserve">
+    <value>Sh**bro, it's too big!</value>
+  </data>
+  <data name="WarningWords_NoChoiceList" xml:space="preserve">
+    <value>Why don't u choose a list, are u wait for me!</value>
+  </data>
+  <data name="WarningWords_NoSpawNum" xml:space="preserve">
+    <value>Lazy dog, plz text num!</value>
+  </data>
+  <data name="MenuFlyoutSubItem_Edit_Symbol.Text" xml:space="preserve">
+    <value>Split symbol</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Symbol_One.Text" xml:space="preserve">
+    <value>Space</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Symbol_Two.Text" xml:space="preserve">
+    <value>New line</value>
+  </data>
 </root>

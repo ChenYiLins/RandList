@@ -1,10 +1,7 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 
 using RandList.Contracts.Services;
 using RandList.Helpers;
-using Windows.UI.ViewManagement;
 
 namespace RandList.Services;
 
@@ -30,7 +27,7 @@ public class ThemeSelectorService : IThemeSelectorService
     public async Task SetThemeAsync(ElementTheme theme)
     {
         Theme = theme;
-        
+
         await SetRequestedThemeAsync();
         await SaveThemeInSettingsAsync(Theme);
     }
@@ -40,6 +37,8 @@ public class ThemeSelectorService : IThemeSelectorService
         if (App.MainWindow.Content is FrameworkElement rootElement)
         {
             rootElement.RequestedTheme = Theme;
+
+            TitleBarHelper.UpdateTitleBar(Theme);
         }
 
         await Task.CompletedTask;
@@ -48,6 +47,7 @@ public class ThemeSelectorService : IThemeSelectorService
     private async Task<ElementTheme> LoadThemeFromSettingsAsync()
     {
         var themeName = await _localSettingsService.ReadSettingAsync<string>(SettingsKey);
+
         if (Enum.TryParse(themeName, out ElementTheme cacheTheme))
         {
             return cacheTheme;

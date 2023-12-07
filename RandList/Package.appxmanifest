@@ -11,10 +11,12 @@
   IgnorableNamespaces="uap rescap genTemplate">
 
   <Identity
-    Name="4b79d0af-ce1b-4569-8b8b-5b8fa5805aa6"
+    Name="cf0de0d3-943b-4fb9-8cc0-50a52b024eff"
     Publisher="CN=10627"
-    Version="1.2.1.0" />
-        
+    Version="1.1.0.0" />
+    
+  <mp:PhoneIdentity PhoneProductId="cf0de0d3-943b-4fb9-8cc0-50a52b024eff" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+    
   <Properties>
     <DisplayName>RandList</DisplayName>
     <PublisherDisplayName>10627</PublisherDisplayName>
@@ -35,23 +37,22 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ms-resource:AppDisplayName"
-        Description="ms-resource:AppDescription"
-        BackgroundColor="transparent"
-        Square150x150Logo="Assets\Square150x150Logo.png"
-        Square44x44Logo="Assets\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+        DisplayName="RandList"
+        Description="This is a simple tool for chose a lucky dog from list"
+        BackgroundColor="transparent" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png"/>
       </uap:VisualElements>
       <Extensions>
           <desktop:Extension Category="windows.toastNotificationActivation">
-              <desktop:ToastNotificationActivation ToastActivatorCLSID="fedc45f4-6d8e-4a0e-97e1-031da0f12262" />
+              <desktop:ToastNotificationActivation ToastActivatorCLSID="38a0c438-7a90-402b-98d9-a6b57d4539fd" />
           </desktop:Extension>
 
           <com:Extension Category="windows.comServer">
               <com:ComServer>
                   <com:ExeServer Executable="RandList.exe" Arguments="----AppNotificationActivated:" DisplayName="Toast activator">
-                      <com:Class Id="fedc45f4-6d8e-4a0e-97e1-031da0f12262" DisplayName="Toast activator"/>
+                      <com:Class Id="38a0c438-7a90-402b-98d9-a6b57d4539fd" DisplayName="Toast activator"/>
                   </com:ExeServer>
               </com:ComServer>
           </com:Extension>
@@ -65,7 +66,7 @@
 
   <genTemplate:Metadata>
     <genTemplate:Item Name="generator" Value="Template Studio"/>
-    <genTemplate:Item Name="wizardVersion" Version="v5.3" />
+    <genTemplate:Item Name="wizardVersion" Version="v5.4" />
     <genTemplate:Item Name="projectType" Value="Blank" />
     <genTemplate:Item Name="framework" Value="MVVMToolkit" />
     <genTemplate:Item Name="platform" Value="WinUI" />

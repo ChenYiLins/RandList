@@ -3,7 +3,6 @@ using Microsoft.UI.Xaml.Controls;
 
 using RandList.Activation;
 using RandList.Contracts.Services;
-using RandList.Views;
 
 namespace RandList.Services;
 

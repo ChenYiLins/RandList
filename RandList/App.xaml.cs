@@ -6,7 +6,6 @@ using RandList.Activation;
 using RandList.Contracts.Services;
 using RandList.Core.Contracts.Services;
 using RandList.Core.Services;
-using RandList.Helpers;
 using RandList.Models;
 using RandList.Services;
 using RandList.ViewModels;
@@ -39,6 +38,11 @@ public partial class App : Application
     }
 
     public static WindowEx MainWindow { get; } = new MainWindow();
+
+    public static UIElement? AppTitlebar
+    {
+        get; set;
+    }
 
     public App()
     {

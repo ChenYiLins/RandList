@@ -123,10 +123,89 @@
   <data name="AppDescription" xml:space="preserve">
     <value>RandList</value>
   </data>
-  <data name="MainPage_Dialog.PrimaryButtonText" xml:space="preserve">
+  <data name="Main_Title.Text" xml:space="preserve">
+    <value>Main</value>
+    <comment>Page title for MainPage</comment>
+  </data>
+  <data name="MainPage_Dialog_Spaw.CloseButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="MainPage_Dialog_Spaw.PrimaryButtonText" xml:space="preserve">
+    <value>开始</value>
+  </data>
+  <data name="MainPage_Dialog_Spaw.Title" xml:space="preserve">
+    <value>开始生成名单</value>
+  </data>
+  <data name="MainPage_Dialog_Spaw_TextBox.Header" xml:space="preserve">
+    <value>请输入数量</value>
+  </data>
+  <data name="MenuBarItem_About.Title" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="MenuBarItem_Edit.Title" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="MenuBarItem_File.Title" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="MenuBarItem_Spaw.Title" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="MenuFlyoutItem_About_About.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="MenuFlyoutItem_Spaw_StartSpaw.Text" xml:space="preserve">
+    <value>生成</value>
+  </data>
+  <data name="MenuFlyoutSubItem_About_Theme.Text" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="MenuFlyoutSubItem_Edit_Mode.Text" xml:space="preserve">
+    <value>模式</value>
+  </data>
+  <data name="MenuFlyoutSubItem_File_List.Text" xml:space="preserve">
+    <value>名单</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_About_Theme_Dark.Text" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_About_Theme_Default.Text" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_About_Theme_Light.Text" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Mode_One.Text" xml:space="preserve">
+    <value>随机起点顺序</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Mode_Two.Text" xml:space="preserve">
+    <value>固定起点顺序</value>
+  </data>
+  <data name="MainPage_Dialog_About.CloseButtonText" xml:space="preserve">
     <value>确认</value>
   </data>
-  <data name="MainPage_Dialog.Title" xml:space="preserve">
-    <value>提示</value>
+  <data name="MainPage_Dialog_About.Title" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="MainPage_Dialog_About_TextBlock.Text" xml:space="preserve">
+    <value>RandList 版本 1.1.0</value>
+  </data>
+  <data name="WarningWords_BiggerSpawNum" xml:space="preserve">
+    <value>生成名单数过大！</value>
+  </data>
+  <data name="WarningWords_NoChoiceList" xml:space="preserve">
+    <value>请选择名单！</value>
+  </data>
+  <data name="WarningWords_NoSpawNum" xml:space="preserve">
+    <value>请输入生成名单数！</value>
+  </data>
+  <data name="MenuFlyoutSubItem_Edit_Symbol.Text" xml:space="preserve">
+    <value>分割符号</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Symbol_One.Text" xml:space="preserve">
+    <value>空格</value>
+  </data>
+  <data name="RadioMenuFlyoutItem_Edit_Symbol_Two.Text" xml:space="preserve">
+    <value>换行符</value>
   </data>
 </root>

@@ -1,20 +1,14 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Text;
-using IniParser;
-using IniParser.Model;
+﻿using IniParser;
 using Microsoft.UI.Xaml.Controls;
-
+using Microsoft.Windows.ApplicationModel.Resources;
 using RandList.ViewModels;
 
 namespace RandList.Views;
 
 public sealed partial class MainPage : Page
 {
-    public static string Path_App = System.AppDomain.CurrentDomain.BaseDirectory;//获取程序运行路径
-    public static string? IniSection;
-    public static bool ThreadCannel;
-    Thread? thread;
+    // 获取程序运行路径
+    public static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory;
 
     public MainViewModel ViewModel
     {
@@ -23,160 +17,131 @@ public sealed partial class MainPage : Page
 
     public MainPage()
     {
+
         ViewModel = App.GetService<MainViewModel>();
         InitializeComponent();
-        //*************************************************************************************
-        if (File.Exists(Path_App + "List.ini"))
+
+        // 获取"List.ini"内所有名单，并加入到子菜单之中
+        if (File.Exists(PathApp + "List.ini"))
         {
-            //为ComboBox添加成员
             var parser = new FileIniDataParser();
-            IniData iniFile = parser.ReadFile(Path_App + "List.ini");
+            var iniFile = parser.ReadFile(PathApp + "List.ini");
+
             for (var i = 0; i < iniFile.Sections.Count; i++)
             {
-                MainPageComboBox.Items.Add(iniFile.Sections.ElementAt(i).SectionName);
+                var item = new RadioMenuFlyoutItem
+                {
+                    Text = iniFile.Sections.ElementAt(i).SectionName
+                };
+                MenuFlyoutSubItemFileList.Items.Add(item);
             }
         }
-        else
-        {
-            MainPageButton.IsEnabled = false;
-            App.MainWindow.Title = "未找到有效名单";
-        }
-        //*************************************************************************************
-
     }
 
-    private async void MainPageButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+    private async void MenuFlyoutItem_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
-        //*************************************************************************************
-        //创建线程
-        thread = new Thread(MainPageTextBoxChangeText);
-        ThreadCannel = false;
-        //*************************************************************************************
-        if (MainPageComboBox.SelectedIndex == -1)
+        var selectedFlyoutItem = sender as MenuFlyoutItem;
+        if (selectedFlyoutItem == MenuFlyoutItemSpawOfStartSpaw)
         {
-            MainPageDialog.Content = "未选择名单";
-            await MainPageDialog.ShowAsync();
+            MainPageSpawDialogOfTextBox.Text = "";
+            await MainPageSpawDialog.ShowAsync();
         }
-        else
+        else if (selectedFlyoutItem == MenuFlyoutItemAboutOfAbout)
         {
-
-            if (Convert.ToString(MainPageButton.Content) == "开始")
-            {
-                MainPageButton.Content = "停止";
-                MainPageComboBox.IsEnabled = false;
-                IniSection = Convert.ToString(MainPageComboBox.SelectedItem);
-                thread.Start();
-
-            }
-            else
-            {
-                MainPageButton.Content = "开始";
-                MainPageComboBox.IsEnabled = true;
-                ThreadCannel = true;             
-            }
+            await MainPageAboutDialog.ShowAsync();
         }
     }
 
-    public async void MainPageTextBoxChangeText()
+    private void MainPageSpawDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
     {
         var parser = new FileIniDataParser();
-        IniData iniFile = parser.ReadFile(Path_App + "List.ini");
-        await Task.Run(() =>
+        var iniFile = parser.ReadFile(PathApp + "List.ini");
+        var isAnyItemSelected = false;
+        var selectedItemText = string.Empty;
+        // 遍历名单菜单项，获取所有名单名称
+        foreach (var items in MenuFlyoutSubItemFileList.Items.Cast<RadioMenuFlyoutItem>())
         {
-            while (true)
+            if (items.IsChecked)
             {
-                for (var i = 0; i < Convert.ToInt32(iniFile[IniSection]["Size"]); i++)
-                {
-                    if (ThreadCannel == true)
-                    {
+                isAnyItemSelected = true;
+                selectedItemText = items.Text;
+                break;
+            }
+        }
+        if (RadioMenuFlyoutItemEditModeOfOne.IsChecked && isAnyItemSelected && MainPageSpawDialogOfTextBox.Text != "" && Convert.ToInt32(MainPageSpawDialogOfTextBox.Text) < Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
+        {
+            MainPageTextBlock.Text = "";
 
-                        ThreadCannel = false;
-                        return;
-                    }
-                    Thread.Sleep(20);
-                     MainPageTextBox.DispatcherQueue.TryEnqueue(() =>
-                     {
-                         //Debug.WriteLine(i);//测试代码
-                         MainPageTextBox.Text = iniFile[IniSection][Convert.ToString(i)];
-                     });
+            var randomNum = new int[100];
+            for (var i = 0; i < Convert.ToInt32(MainPageSpawDialogOfTextBox.Text); i++)
+            {
+                var random = new Random();
+                var newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItemText]["NUM"]) + 1);
+                // 随机起点顺序，while循环判断是否生成了重复的随机数，避免产生相同名单
+                while (Array.IndexOf(randomNum, newRandNum) != -1)
+                {
+                    newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItemText]["NUM"]) + 1);
+                }
+                randomNum[i] = newRandNum;
+                // 通过对分割符菜单选项判断，确立不同的分割符
+                if (RadioMenuFlyoutItemEditSymbolOfOne.IsChecked)
+                {
+                    MainPageTextBlock.Text = MainPageTextBlock.Text + " " + iniFile[selectedItemText][Convert.ToString(randomNum[i])];
+                }
+                else if (RadioMenuFlyoutItemEditSymbolOfTwo.IsChecked)
+                {
+                    MainPageTextBlock.Text = MainPageTextBlock.Text + iniFile[selectedItemText][Convert.ToString(randomNum[i])] + "\n";
                 }
             }
-        });
-    }
+        }
+        else if (RadioMenuFlyoutItemEditModeOfTwo.IsChecked && isAnyItemSelected && MainPageSpawDialogOfTextBox.Text != "" && Convert.ToInt32(MainPageSpawDialogOfTextBox.Text) < Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
+        {
+            MainPageTextBlock.Text = "";
 
-    #region API函数声明
-    [DllImport("kernel32")]//返回0表示失败，非0为成功
-    private static extern long WritePrivateProfileString(string section, string key,
-      string val, string filePath);
-    [DllImport("kernel32")]//返回取得字符串缓冲区的长度
-    private static extern long GetPrivateProfileString(string section, string key,
-      string def, StringBuilder retVal, int size, string filePath);
-    #endregion
-    #region 读Ini文件
-    /// <summary>
-    /// 读取ini文件内容的方法
-    /// </summary>
-    /// <param name="Section">ini文件的节名</param>
-    /// <param name="Key">ini文件对应节下的键名</param>
-    /// <param name="NoText">ini文件对应节对应键下无内容时返回的值</param>
-    /// <param name="iniFilePath">该ini文件的路径</param>
-    /// <returns></returns>
-    public static string ReadIniData(string Section, string Key, string NoText, string iniFilePath)
-    {
-        if (File.Exists(iniFilePath))
-        {
-            StringBuilder temp = new StringBuilder(1024);
-            GetPrivateProfileString(Section, Key, NoText, temp, 1024, iniFilePath);
-            return temp.ToString();
-        }
-        else
-        {
-            return String.Empty;
-        }
-    }
-    #endregion
-    #region 写Ini文件
-    /// <summary>
-    /// 将内容写入指定的ini文件中
-    /// </summary>
-    /// <param name="Section">ini文件中的节名</param>
-    /// <param name="Key">ini文件中的键</param>
-    /// <param name="Value">要写入该键所对应的值</param>
-    /// <param name="iniFilePath">ini文件路径</param>
-    /// <returns></returns>
-    public static bool WriteIniData(string Section, string Key, string Value, string iniFilePath)
-    {
-        if (File.Exists(iniFilePath))
-        {
-            var OpStation = WritePrivateProfileString(Section, Key, Value, iniFilePath);
-            if (OpStation == 0)
+            // 固定起点顺序，先行初始化随机数，并从这个随机数开始累加
+            int selectNum;
+            var random = new Random();
+            var newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItemText]["NUM"]) + 1);
+            for (var i = 0; i < Convert.ToInt32(MainPageSpawDialogOfTextBox.Text); i++)
             {
-                return false;
-            }
-            else
-            {
-                return true;
+                if (newRandNum + i <= Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
+                {
+                    selectNum = newRandNum + i;
+                }
+                else
+                {
+                    selectNum = newRandNum + i - Convert.ToInt32(iniFile[selectedItemText]["NUM"]);
+                }
+                // 通过对分割符菜单选项判断，确立不同的分割符
+                if (RadioMenuFlyoutItemEditSymbolOfOne.IsChecked)
+                {
+                    MainPageTextBlock.Text = MainPageTextBlock.Text + " " + iniFile[selectedItemText][Convert.ToString(selectNum)];
+                }
+                else if (RadioMenuFlyoutItemEditSymbolOfTwo.IsChecked)
+                {
+                    MainPageTextBlock.Text = MainPageTextBlock.Text + iniFile[selectedItemText][Convert.ToString(selectNum)] + "\n";
+                }
             }
         }
-        else
+
+        // 异常情况提示
+        // 没有选择任何名单
+        if (isAnyItemSelected == false)
         {
-            return false;
+            var resourceLoader = new ResourceLoader();
+            MainPageTextBlock.Text = resourceLoader.GetString("WarningWords_NoChoiceList");
+        }
+        // 没有填写生成数量
+        else if (MainPageSpawDialogOfTextBox.Text == "")
+        {
+            var resourceLoader = new ResourceLoader();
+            MainPageTextBlock.Text = resourceLoader.GetString("WarningWords_NoSpawNum");
+        }
+        // 生成数量超出名单数
+        else if (Convert.ToInt32(MainPageSpawDialogOfTextBox.Text) > Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
+        {
+            var resourceLoader = new ResourceLoader();
+            MainPageTextBlock.Text = resourceLoader.GetString("WarningWords_BiggerSpawNum");
         }
     }
-    #endregion
-    #region 取文本左边
-    public static string GetLeft(string str, int n)//取文本左边
-    {
-        var Temp = str.Substring(0, n);
-        return Temp;
-    }
-    #endregion
-    #region 取文本右边
-    public static string GetRight(string str, int n)//取文本右边
-    {
-        var Temp = str.Substring(str.Length - n);
-        return Temp;
-    }
-    #endregion
-
 }
