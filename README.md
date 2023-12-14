@@ -21,7 +21,7 @@
 
 ## 下载
 
-你可以在[Github Release](https://github.com/ChenYiLins/RandList/releases)界面找到名为`RandList-x64-1.1.0.exe`的直接安装程序和名为`RandList-Portable-x64-1.1.0.zip`便携版压缩包。
+你可以在[Github Release](https://github.com/ChenYiLins/RandList/releases)界面找到名为`RandList-x64-x.x.x.exe`的直接安装程序和名为`RandList-Portable-x64-x.x.x.zip`便携版压缩包。
 
 运行要求：
 
