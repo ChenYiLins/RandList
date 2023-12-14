@@ -8,13 +8,20 @@
 
 ## 更新日志
 
+### v1.1.1-2023.12.14
+
+1. 将项目升级到.NET 8.0，喜闻乐见的环节🥱！（由于*Template studio for WinUI*暂时还没有推出官方的.NET 8.0版本，所以在利用升级插件的情况下，将项目升级到.Net 8.0）。
+2. 得益于.NET 8.0的优异表现，现在经过裁剪过后的程序体积来到了80MB左右，同时在经过LAMA压缩后来到了惊人的19MB😮！！
+
+- 目前尚不清楚*Microsoft.DotNet.ILCompiler*是否产生了卓有成效的作用，只能说是聊胜于无😒。因为从*Windows App SDK*的Github讨论中可以得出一个结论，对于.NET 8.0的AOT适配还有一段很长的路要走，所以我相信在<PublishAOT>为false的情况下，*Microsoft.DotNet.ILCompiler*应该是没有什么用的。
+
 ### v1.1.0-2023.12.04
 
 1. 重构UI界面，参考[Figma设计原型](https://www.figma.com/file/kIi0hANHD5BtFSdRWtK2rp/RandList?type=design&node-id=0%3A1&mode=design&t=JQTCDh0aOj0dTJp5-1)（可能与程序实际界面有部分出入）。
 2. 现程序概念已不同于最初版本，现在不再是生成单个随机，可选择生成数量、模式、分隔符号。
 3. 添加了不同的生成模式（随机起点：全随机模式，比如：4，6，9，13，17；固定起点：随机一个起点，比如：4，5，6，7，8）。
 4. 现在能够选择生成名单的分隔符号了（现有空格和换行符）。
-5. 新的应用程序图标，符合微软关于Fluent的定义，设计原稿可以参考**/Assest/WindowIcon.ai**，对此甚是满意😏。
+5. 新的应用程序图标，符合微软关于Fluent的定义，设计原稿可以参考*/Assest/WindowIcon.ai*，对此甚是满意😏。
 6. 本地化支持情况：英语、中文（简体）。
 
 - 界面使用的是Mica Alt变体，效果似乎不是特别理想。
