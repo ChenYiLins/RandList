@@ -188,7 +188,7 @@
     <value>关于</value>
   </data>
   <data name="MainPage_Dialog_About_TextBlock.Text" xml:space="preserve">
-    <value>RandList 版本 1.1.0</value>
+    <value>RandList 版本 1.1.1</value>
   </data>
   <data name="WarningWords_BiggerSpawNum" xml:space="preserve">
     <value>生成名单数过大！</value>
