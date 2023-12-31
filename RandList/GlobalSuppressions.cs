@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE0011:添加大括号", Justification = "<挂起>", Scope = "member", Target = "~M:RandList.App.OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs)")]
+[assembly: SuppressMessage("Style", "IDE0011:添加大括号", Justification = "<挂起>", Scope = "module")]
