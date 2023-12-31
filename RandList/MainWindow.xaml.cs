@@ -11,12 +11,11 @@ namespace RandList;
 
 public sealed partial class MainWindow : WindowEx
 {
-    private Microsoft.UI.Dispatching.DispatcherQueue dispatcherQueue;
+    private readonly Microsoft.UI.Dispatching.DispatcherQueue dispatcherQueue;
 
-    private UISettings settings;
+    private readonly UISettings settings;
 
-    // 获取程序运行路径
-    public static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory;
+    public static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory; // 获取程序运行路径
 
     public MainWindow()
     {
@@ -50,12 +49,13 @@ public sealed partial class MainWindow : WindowEx
                 };
                 AppWindow.MoveAndResize(rect);
             }
-            Closed += MainWindow_Closed;
+
         }
 
+        Closed += MainWindow_Closed;
     }
 
-    // this handles updating the caption button colors correctly when indows system theme is changed
+    // this handles updating the caption button colors correctly when windows system theme is changed
     // while the app is open
     private void Settings_ColorValuesChanged(UISettings sender, object args)
     {
