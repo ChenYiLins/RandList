@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE0011:添加大括号", Justification = "<挂起>", Scope = "module")]
+[assembly: SuppressMessage("Trimming", "IL2026:Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code", Justification = "<挂起>", Scope = "member", Target = "~M:RandList.App.#ctor")]
