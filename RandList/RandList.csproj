@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+	<AssemblyVersion>1.1.3.0</AssemblyVersion>
     <OutputType>WinExe</OutputType>
     <RootNamespace>RandList</RootNamespace>
     <ApplicationIcon>Assets/WindowIcon.ico</ApplicationIcon>
@@ -19,6 +20,7 @@
   <ItemGroup>
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
+	
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
@@ -32,6 +34,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RandList.Core\RandList.Core.csproj" />
   </ItemGroup>
+	
   <ItemGroup>
     <Content Include="AppWindow.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -6,10 +6,10 @@
     xmlns:helpers="using:RandList.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:xaml="using:Microsoft.UI.Xaml"
-    Background="{ThemeResource LayerOnMicaBaseAltFillColorDefaultBrush}"
     mc:Ignorable="d">
     <Page.Resources>
         <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+        <helpers:StringEqualsConverter x:Key="StringEqualsConverter" />
     </Page.Resources>
 
     <Grid x:Name="ContentArea">
@@ -42,55 +42,57 @@
 
         <Grid Grid.Row="1" VerticalAlignment="Top">
             <MenuBar>
-                <MenuBarItem x:Uid="MenuBarItem_File">
-                    <MenuFlyoutSubItem x:Name="MenuFlyoutSubItemFileList" x:Uid="MenuFlyoutSubItem_File_List" />
+                <MenuBarItem x:Uid="MenuBar_File">
+                    <MenuFlyoutSubItem x:Name="FileListMenuItem" x:Uid="MenuItem_File_List" />
                 </MenuBarItem>
 
-                <MenuBarItem x:Uid="MenuBarItem_Edit">
-                    <MenuFlyoutSubItem x:Uid="MenuFlyoutSubItem_Edit_Mode">
+                <MenuBarItem x:Uid="MenuBar_Edit">
+                    <MenuFlyoutSubItem x:Uid="MenuItem_Edit_Mode">
                         <RadioMenuFlyoutItem
-                            x:Name="RadioMenuFlyoutItemEditModeOfOne"
-                            x:Uid="RadioMenuFlyoutItem_Edit_Mode_One"
+                            x:Name="EditModeRandomRadioMenuItem"
+                            x:Uid="MenuItem_Edit_Mode_Random"
                             GroupName="Edit_Mode"
                             IsChecked="True" />
                         <!--  模式1：随机起点顺序  -->
                         <RadioMenuFlyoutItem
-                            x:Name="RadioMenuFlyoutItemEditModeOfTwo"
-                            x:Uid="RadioMenuFlyoutItem_Edit_Mode_Two"
+                            x:Name="EditModeFixedRadioMenuItem"
+                            x:Uid="MenuItem_Edit_Mode_Fixed"
                             GroupName="Edit_Mode" />
                         <!--  模式2：固定起点顺序  -->
                     </MenuFlyoutSubItem>
-                    <MenuFlyoutSubItem x:Uid="MenuFlyoutSubItem_Edit_Symbol">
+                    <MenuFlyoutSubItem x:Uid="MenuItem_Edit_Symbol">
                         <RadioMenuFlyoutItem
-                            x:Name="RadioMenuFlyoutItemEditSymbolOfOne"
-                            x:Uid="RadioMenuFlyoutItem_Edit_Symbol_One"
+                            x:Name="EditSymbolSpaceRadioMenuItem"
+                            x:Uid="MenuItem_Edit_Symbol_Space"
                             GroupName="Edit_Symbol"
                             IsChecked="True" />
                         <!--  符号1：空格  -->
                         <RadioMenuFlyoutItem
-                            x:Name="RadioMenuFlyoutItemEditSymbolOfTwo"
-                            x:Uid="RadioMenuFlyoutItem_Edit_Symbol_Two"
+                            x:Name="EditSymbolNewlineRadioMenuItem"
+                            x:Uid="MenuItem_Edit_Symbol_Newline"
                             GroupName="Edit_Symbol" />
                         <!--  符号2：换行符  -->
                     </MenuFlyoutSubItem>
                 </MenuBarItem>
 
-                <MenuBarItem x:Uid="MenuBarItem_Spaw">
+                <MenuBarItem x:Uid="MenuBar_Generate">
                     <MenuFlyoutItem
-                        x:Name="MenuFlyoutItemSpawOfStartSpaw"
-                        x:Uid="MenuFlyoutItem_Spaw_StartSpaw"
-                        Click="MenuFlyoutItem_Click" />
+                        x:Name="GenerateStartMenuItem"
+                        x:Uid="MenuItem_Generate_Start"
+                        Click="MenuItem_Click" />
                 </MenuBarItem>
 
-                <MenuBarItem x:Uid="MenuBarItem_About">
+                <MenuBarItem x:Uid="MenuBar_About">
                     <MenuFlyoutItem
-                        x:Name="MenuFlyoutItemAboutOfAbout"
-                        x:Uid="MenuFlyoutItem_About_About"
-                        Click="MenuFlyoutItem_Click" />
-                    <MenuFlyoutSubItem x:Uid="MenuFlyoutSubItem_About_Theme">
+                        x:Name="AboutAboutMenuItem"
+                        x:Uid="MenuItem_About_About"
+                        Click="MenuItem_Click" />
+
+                    <MenuFlyoutSubItem x:Uid="MenuItem_About_Theme">
                         <RadioMenuFlyoutItem
-                            x:Uid="RadioMenuFlyoutItem_About_Theme_Default"
+                            x:Uid="MenuItem_About_Theme_Default"
                             Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            GroupName="Theme"
                             IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Default, Mode=OneWay}">
                             <MenuFlyoutItem.CommandParameter>
                                 <xaml:ElementTheme>Default</xaml:ElementTheme>
@@ -98,8 +100,9 @@
                         </RadioMenuFlyoutItem>
 
                         <RadioMenuFlyoutItem
-                            x:Uid="RadioMenuFlyoutItem_About_Theme_Light"
+                            x:Uid="MenuItem_About_Theme_Light"
                             Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            GroupName="Theme"
                             IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}">
                             <MenuFlyoutItem.CommandParameter>
                                 <xaml:ElementTheme>Light</xaml:ElementTheme>
@@ -107,11 +110,36 @@
                         </RadioMenuFlyoutItem>
 
                         <RadioMenuFlyoutItem
-                            x:Uid="RadioMenuFlyoutItem_About_Theme_Dark"
+                            x:Uid="MenuItem_About_Theme_Dark"
                             Command="{x:Bind ViewModel.SwitchThemeCommand}"
+                            GroupName="Theme"
                             IsChecked="{x:Bind ViewModel.ElementTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}">
                             <MenuFlyoutItem.CommandParameter>
                                 <xaml:ElementTheme>Dark</xaml:ElementTheme>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+                    </MenuFlyoutSubItem>
+
+                    <MenuFlyoutSubItem x:Uid="MenuItem_About_Language">
+                        <RadioMenuFlyoutItem
+                            Command="{x:Bind ViewModel.SwitchLanguageCommand}"
+                            GroupName="Language"
+                            IsChecked="{x:Bind ViewModel.Language, Converter={StaticResource StringEqualsConverter}, ConverterParameter=zh-cn, Mode=OneWay}"
+                            IsEnabled="False"
+                            Text="简体中文">
+                            <MenuFlyoutItem.CommandParameter>
+                                <x:String>zh-cn</x:String>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+
+                        <RadioMenuFlyoutItem
+                            Command="{x:Bind ViewModel.SwitchLanguageCommand}"
+                            GroupName="Language"
+                            IsChecked="{x:Bind ViewModel.Language, Converter={StaticResource StringEqualsConverter}, ConverterParameter=en-us, Mode=OneWay}"
+                            IsEnabled="False"
+                            Text="English">
+                            <MenuFlyoutItem.CommandParameter>
+                                <x:String>en-us</x:String>
                             </MenuFlyoutItem.CommandParameter>
                         </RadioMenuFlyoutItem>
                     </MenuFlyoutSubItem>
@@ -121,11 +149,11 @@
         </Grid>
 
         <ContentDialog
-            x:Name="MainPageSpawDialog"
-            x:Uid="MainPage_Dialog_Spaw"
+            x:Name="MainPageGenerateDialog"
+            x:Uid="MainPage_Dialog_Generate"
             DefaultButton="Primary"
-            PrimaryButtonClick="MainPageSpawDialog_PrimaryButtonClick">
-            <TextBox x:Name="MainPageSpawDialogOfTextBox" x:Uid="MainPage_Dialog_Spaw_TextBox" />
+            PrimaryButtonClick="MainPageGenerateDialog_PrimaryButtonClick">
+            <TextBox x:Name="MainPageGenerateDialogOfTextBox" x:Uid="MainPage_Dialog_Generate_TextBox" />
         </ContentDialog>
 
         <ContentDialog
@@ -138,7 +166,7 @@
                     Height="16"
                     HorizontalAlignment="Left"
                     Source="/Assets/WindowIcon.ico" />
-                <TextBlock x:Uid="MainPage_Dialog_About_TextBlock" Margin="6" />
+                <TextBlock x:Name="MainPageAboutDialogOfTextBox" Margin="6" />
                 <HyperlinkButton Content="GitHub" NavigateUri="https://github.com/ChenYiLins/RandList" />
             </StackPanel>
         </ContentDialog>

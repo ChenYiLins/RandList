@@ -1,7 +1,10 @@
-﻿using System.Reflection;
+﻿using System.Diagnostics;
+using System.Globalization;
+using System.Reflection;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using IniParser;
 using Microsoft.UI.Xaml;
 using RandList.Contracts.Services;
 using RandList.Helpers;
@@ -17,9 +20,17 @@ public partial class MainViewModel : ObservableRecipient
     private ElementTheme _elementTheme;
 
     [ObservableProperty]
+    private string _Language;
+
+    [ObservableProperty]
     private string _versionDescription;
 
     public ICommand SwitchThemeCommand
+    {
+        get;
+    }
+
+    public ICommand SwitchLanguageCommand
     {
         get;
     }
@@ -28,6 +39,7 @@ public partial class MainViewModel : ObservableRecipient
     {
         _themeSelectorService = themeSelectorService;
         _elementTheme = _themeSelectorService.Theme;
+        _Language = "zh-cn";
         _versionDescription = GetVersionDescription();
 
         SwitchThemeCommand = new RelayCommand<ElementTheme>(
@@ -37,6 +49,15 @@ public partial class MainViewModel : ObservableRecipient
                 {
                     ElementTheme = param;
                     await _themeSelectorService.SetThemeAsync(param);
+                }
+            });
+
+        SwitchLanguageCommand = new RelayCommand<string>(
+            (param) =>
+            {
+                if (param != null)
+                {
+                    
                 }
             });
     }
@@ -58,4 +79,5 @@ public partial class MainViewModel : ObservableRecipient
 
         return $"{"AppDisplayName".GetLocalized()} - {version.Major}.{version.Minor}.{version.Build}";
     }
+
 }

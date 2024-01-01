@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RandList.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d40c7abc2225bcf82f8f385029f079a54dc11cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+943b44b72be8d116437ff32b43b7822c9b3cb7a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("RandList.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RandList.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

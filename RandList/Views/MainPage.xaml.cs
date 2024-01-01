@@ -1,14 +1,15 @@
-﻿using IniParser;
+﻿using System.Reflection;
+using IniParser;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.Windows.ApplicationModel.Resources;
+using RandList.Helpers;
 using RandList.ViewModels;
 
 namespace RandList.Views;
 
 public sealed partial class MainPage : Page
 {
-    // 获取程序运行路径
-    public static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory;
+
+    private static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory; // 获取程序运行路径
 
     public MainViewModel ViewModel
     {
@@ -17,7 +18,6 @@ public sealed partial class MainPage : Page
 
     public MainPage()
     {
-
         ViewModel = App.GetService<MainViewModel>();
         InitializeComponent();
 
@@ -31,117 +31,126 @@ public sealed partial class MainPage : Page
             {
                 var item = new RadioMenuFlyoutItem
                 {
-                    Text = iniFile.Sections.ElementAt(i).SectionName
+                    Text = iniFile.Sections.ElementAt(i).SectionName,
+                    GroupName = "List",
+                    IsChecked = i == 0
                 };
-                MenuFlyoutSubItemFileList.Items.Add(item);
+                FileListMenuItem.Items.Add(item);
             }
+        }
+        else
+        {
+            ShowWarning("WarningWords_NoList");
+            GenerateStartMenuItem.IsEnabled = false;
         }
     }
 
-    private async void MenuFlyoutItem_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+    private async void MenuItem_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
     {
         var selectedFlyoutItem = sender as MenuFlyoutItem;
-        if (selectedFlyoutItem == MenuFlyoutItemSpawOfStartSpaw)
+        if (selectedFlyoutItem == GenerateStartMenuItem)
         {
-            MainPageSpawDialogOfTextBox.Text = "";
-            await MainPageSpawDialog.ShowAsync();
+            MainPageGenerateDialogOfTextBox.Text = "";
+            await MainPageGenerateDialog.ShowAsync();
         }
-        else if (selectedFlyoutItem == MenuFlyoutItemAboutOfAbout)
+        else if (selectedFlyoutItem == AboutAboutMenuItem)
         {
+            MainPageAboutDialogOfTextBox.Text = ResourceExtensions.GetLocalized("MainPage_Dialog_About_TextBlock") + GetVersionDescription();
             await MainPageAboutDialog.ShowAsync();
         }
     }
 
-    private void MainPageSpawDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
+    private void MainPageGenerateDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
     {
         var parser = new FileIniDataParser();
         var iniFile = parser.ReadFile(PathApp + "List.ini");
-        var isAnyItemSelected = false;
-        var selectedItemText = string.Empty;
-        // 遍历名单菜单项，获取所有名单名称
-        foreach (var items in MenuFlyoutSubItemFileList.Items.Cast<RadioMenuFlyoutItem>())
+
+        var selectedItem = FileListMenuItem.Items.Cast<RadioMenuFlyoutItem>().FirstOrDefault(item => item.IsChecked);
+        if (selectedItem == null) return;
+
+        // 异常情况提示
+        // 没有填写生成数量
+        if (MainPageGenerateDialogOfTextBox.Text == "")
         {
-            if (items.IsChecked)
-            {
-                isAnyItemSelected = true;
-                selectedItemText = items.Text;
-                break;
-            }
+            ShowWarning("WarningWords_NoGenerateNum");
+            return;
         }
-        if (RadioMenuFlyoutItemEditModeOfOne.IsChecked && isAnyItemSelected && MainPageSpawDialogOfTextBox.Text != "" && Convert.ToInt32(MainPageSpawDialogOfTextBox.Text) < Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
+        // 生成数量超出名单数
+        else if (Convert.ToInt32(MainPageGenerateDialogOfTextBox.Text) > Convert.ToInt32(iniFile[selectedItem.Text]["NUM"]))
+        {
+            ShowWarning("WarningWords_BiggerGenerateNum");
+            return;
+        }
+
+        // 不同生成模式判断
+        if (EditModeRandomRadioMenuItem.IsChecked)
         {
             MainPageTextBlock.Text = "";
 
-            var randomNum = new int[100];
-            for (var i = 0; i < Convert.ToInt32(MainPageSpawDialogOfTextBox.Text); i++)
+            var randomNum = new List<int>();
+            for (var i = 0; i < Convert.ToInt32(MainPageGenerateDialogOfTextBox.Text); i++)
             {
                 var random = new Random();
-                var newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItemText]["NUM"]) + 1);
+                var newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItem.Text]["NUM"]) + 1);
                 // 随机起点顺序，while循环判断是否生成了重复的随机数，避免产生相同名单
-                while (Array.IndexOf(randomNum, newRandNum) != -1)
+                while (randomNum.Contains(newRandNum))
                 {
-                    newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItemText]["NUM"]) + 1);
+                    newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItem.Text]["NUM"]) + 1);
                 }
-                randomNum[i] = newRandNum;
+                randomNum.Add(newRandNum);
                 // 通过对分割符菜单选项判断，确立不同的分割符
-                if (RadioMenuFlyoutItemEditSymbolOfOne.IsChecked)
+                if (EditSymbolSpaceRadioMenuItem.IsChecked)
                 {
-                    MainPageTextBlock.Text = MainPageTextBlock.Text + " " + iniFile[selectedItemText][Convert.ToString(randomNum[i])];
+                    MainPageTextBlock.Text += " " + iniFile[selectedItem.Text][Convert.ToString(randomNum[i])];
                 }
-                else if (RadioMenuFlyoutItemEditSymbolOfTwo.IsChecked)
+                else if (EditSymbolNewlineRadioMenuItem.IsChecked)
                 {
-                    MainPageTextBlock.Text = MainPageTextBlock.Text + iniFile[selectedItemText][Convert.ToString(randomNum[i])] + "\n";
+                    MainPageTextBlock.Text += iniFile[selectedItem.Text][Convert.ToString(randomNum[i])] + "\n";
                 }
             }
         }
-        else if (RadioMenuFlyoutItemEditModeOfTwo.IsChecked && isAnyItemSelected && MainPageSpawDialogOfTextBox.Text != "" && Convert.ToInt32(MainPageSpawDialogOfTextBox.Text) < Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
+        else if (EditModeFixedRadioMenuItem.IsChecked)
         {
             MainPageTextBlock.Text = "";
 
             // 固定起点顺序，先行初始化随机数，并从这个随机数开始累加
             int selectNum;
             var random = new Random();
-            var newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItemText]["NUM"]) + 1);
-            for (var i = 0; i < Convert.ToInt32(MainPageSpawDialogOfTextBox.Text); i++)
+            var newRandNum = random.Next(1, Convert.ToInt32(iniFile[selectedItem.Text]["NUM"]) + 1);
+            for (var i = 0; i < Convert.ToInt32(MainPageGenerateDialogOfTextBox.Text); i++)
             {
-                if (newRandNum + i <= Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
+                if (newRandNum + i <= Convert.ToInt32(iniFile[selectedItem.Text]["NUM"]))
                 {
                     selectNum = newRandNum + i;
                 }
                 else
                 {
-                    selectNum = newRandNum + i - Convert.ToInt32(iniFile[selectedItemText]["NUM"]);
+                    selectNum = newRandNum + i - Convert.ToInt32(iniFile[selectedItem.Text]["NUM"]);
                 }
                 // 通过对分割符菜单选项判断，确立不同的分割符
-                if (RadioMenuFlyoutItemEditSymbolOfOne.IsChecked)
+                if (EditSymbolSpaceRadioMenuItem.IsChecked)
                 {
-                    MainPageTextBlock.Text = MainPageTextBlock.Text + " " + iniFile[selectedItemText][Convert.ToString(selectNum)];
+                    MainPageTextBlock.Text += " " + iniFile[selectedItem.Text][Convert.ToString(selectNum)];
                 }
-                else if (RadioMenuFlyoutItemEditSymbolOfTwo.IsChecked)
+                else if (EditSymbolNewlineRadioMenuItem.IsChecked)
                 {
-                    MainPageTextBlock.Text = MainPageTextBlock.Text + iniFile[selectedItemText][Convert.ToString(selectNum)] + "\n";
+                    MainPageTextBlock.Text += iniFile[selectedItem.Text][Convert.ToString(selectNum)] + "\n";
                 }
             }
         }
+    }
 
-        // 异常情况提示
-        // 没有选择任何名单
-        if (isAnyItemSelected == false)
-        {
-            var resourceLoader = new ResourceLoader();
-            MainPageTextBlock.Text = resourceLoader.GetString("WarningWords_NoChoiceList");
-        }
-        // 没有填写生成数量
-        else if (MainPageSpawDialogOfTextBox.Text == "")
-        {
-            var resourceLoader = new ResourceLoader();
-            MainPageTextBlock.Text = resourceLoader.GetString("WarningWords_NoSpawNum");
-        }
-        // 生成数量超出名单数
-        else if (Convert.ToInt32(MainPageSpawDialogOfTextBox.Text) > Convert.ToInt32(iniFile[selectedItemText]["NUM"]))
-        {
-            var resourceLoader = new ResourceLoader();
-            MainPageTextBlock.Text = resourceLoader.GetString("WarningWords_BiggerSpawNum");
-        }
+
+    private void ShowWarning(string warningKey)
+    {
+        MainPageTextBlock.Text = ResourceExtensions.GetLocalized(warningKey);
+    }
+
+    private static string GetVersionDescription()
+    {
+        Version version;
+        version = Assembly.GetExecutingAssembly().GetName().Version!;
+
+        return $"{version.Major}.{version.Minor}.{version.Build}";
     }
 }
