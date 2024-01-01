@@ -13,10 +13,10 @@
     <ROW Property="ARPNOREPAIR" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="WindowIcon.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="ChenYiLins"/>
-    <ROW Property="ProductCode" Value="2052:{D8E907BA-B679-4E2A-8E2C-EC6CDD47C52C} " Type="16"/>
+    <ROW Property="ProductCode" Value="2052:{18B9DB7D-30D4-474F-8D39-CCE5ACC6916E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="RandList"/>
-    <ROW Property="ProductVersion" Value="1.1.2" Options="32"/>
+    <ROW Property="ProductVersion" Value="1.1.3" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{BE6C21B5-1D44-4C64-89FB-28D1EB27EB8A}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -41,7 +41,6 @@
     <ROW Directory="ProgramFiles64Folder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramFiles64Folder" IsPseudoRoot="1"/>
     <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~2|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="RandList_Dir" Directory_Parent="ProgramFiles64Folder" DefaultDir="RandList"/>
-    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="enus_Dir" Directory_Parent="RandList_Dir" DefaultDir="en-us"/>
     <ROW Directory="zhCN_Dir" Directory_Parent="RandList_Dir" DefaultDir="zh-CN"/>
@@ -50,187 +49,185 @@
     <ROW Component="AI_ExePath" ComponentId="{0EFE2674-4001-4ABC-A23E-7740981823B6}" Directory_="APPDIR" Attributes="260" KeyPath="AI_ExePath"/>
     <ROW Component="AI_INSTALLPERUSER" ComponentId="{7CA79DE3-727A-45E5-AAC2-75047F2E918B}" Directory_="APPDIR" Attributes="260" KeyPath="AI_INSTALLPERUSER" Options="1"/>
     <ROW Component="APPDIR" ComponentId="{571BC174-A12B-4308-977B-7C1E46B7EE53}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="AppWindow.ini" ComponentId="{1408C64D-8D70-46FC-86CD-70133C5DBBFF}" Directory_="RandList_Dir" Attributes="0" KeyPath="AppWindow.ini" Type="0"/>
-    <ROW Component="CommunityToolkit.Mvvm.dll" ComponentId="{1253C790-F3B4-49BA-8136-F7C62AA7B0E4}" Directory_="RandList_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll"/>
-    <ROW Component="CoreMessagingXP.dll" ComponentId="{695D2EAB-A48F-4192-ACB7-08BD98AF2907}" Directory_="RandList_Dir" Attributes="256" KeyPath="CoreMessagingXP.dll"/>
-    <ROW Component="DWriteCore.dll" ComponentId="{AE7BC747-1675-43B2-A9B8-25E3CB03E319}" Directory_="RandList_Dir" Attributes="256" KeyPath="DWriteCore.dll"/>
-    <ROW Component="DwmSceneI.dll" ComponentId="{67B8BF29-5820-4EEA-82A9-942BE992EC4A}" Directory_="RandList_Dir" Attributes="256" KeyPath="DwmSceneI.dll"/>
-    <ROW Component="INIFileParser.dll" ComponentId="{F5F8945B-A2F5-41F4-B4FB-56AC35EE6DC3}" Directory_="RandList_Dir" Attributes="0" KeyPath="INIFileParser.dll"/>
-    <ROW Component="MRM.dll" ComponentId="{D55D6033-B032-489B-BFDC-EE625D6E74E2}" Directory_="RandList_Dir" Attributes="256" KeyPath="MRM.dll"/>
+    <ROW Component="AppWindow.ini" ComponentId="{467A1A85-A754-4A0A-BFEA-3BCF33EF2A48}" Directory_="RandList_Dir" Attributes="0" KeyPath="AppWindow.ini" Type="0"/>
+    <ROW Component="CommunityToolkit.Mvvm.dll" ComponentId="{E230D5CC-BA05-41CB-839A-81C55960EB06}" Directory_="RandList_Dir" Attributes="0" KeyPath="CommunityToolkit.Mvvm.dll"/>
+    <ROW Component="CoreMessagingXP.dll" ComponentId="{6FB1F313-5E6E-4082-B9AF-25D8566740BC}" Directory_="RandList_Dir" Attributes="256" KeyPath="CoreMessagingXP.dll"/>
+    <ROW Component="DWriteCore.dll" ComponentId="{5B551305-02DF-404C-A27C-09B03B61A18B}" Directory_="RandList_Dir" Attributes="256" KeyPath="DWriteCore.dll"/>
+    <ROW Component="DwmSceneI.dll" ComponentId="{A2809625-1417-4C3D-970B-1B5FB080572F}" Directory_="RandList_Dir" Attributes="256" KeyPath="DwmSceneI.dll"/>
+    <ROW Component="INIFileParser.dll" ComponentId="{E846EB65-335A-42C3-9D34-309A8A8465D6}" Directory_="RandList_Dir" Attributes="0" KeyPath="INIFileParser.dll"/>
+    <ROW Component="MRM.dll" ComponentId="{E44C6970-DBDB-48DE-ABA4-174906AD667F}" Directory_="RandList_Dir" Attributes="256" KeyPath="MRM.dll"/>
     <ROW Component="Manufacturer" ComponentId="{127DF351-2479-46BD-ACF9-1A51DEC64734}" Directory_="APPDIR" Attributes="260" KeyPath="Manufacturer"/>
-    <ROW Component="Microsoft.CSharp.dll" ComponentId="{F3BB9AFF-ECB1-4DB3-999B-CCE351659694}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.CSharp.dll"/>
-    <ROW Component="Microsoft.DiaSymReader.Native.amd64.dll" ComponentId="{1B9874D5-18B3-47E9-8BBC-CBD725B88223}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.DiaSymReader.Native.amd64.dll"/>
-    <ROW Component="Microsoft.DirectManipulation.dll" ComponentId="{36B46E02-F01E-4508-8F94-88794B3F09C4}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.DirectManipulation.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll" ComponentId="{29E10128-39EE-4385-97B3-469FBA844EF5}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll" ComponentId="{68235871-6D3C-4BBB-8DB2-63C1E46385A0}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.CommandLine.dll" ComponentId="{F6654ABB-B27A-447A-A616-4B6FA6F052BB}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.CommandLine.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.EnvironmentVariables.dll" ComponentId="{1476C48E-7040-4BDC-A55B-90F87B17DDE3}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.EnvironmentVariables.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll" ComponentId="{EF181684-23A4-4A5D-9A76-BD0BBAC0418D}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.Json.dll" ComponentId="{E0ED18C4-09FC-4C74-B92C-594B3A6A8B34}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.UserSecrets.dll" ComponentId="{A649C77B-50F2-45E1-9B03-B5713621B739}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.UserSecrets.dll"/>
-    <ROW Component="Microsoft.Extensions.Configuration.dll" ComponentId="{480C61F0-1D94-480D-8829-24CA415374D9}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll" ComponentId="{D1F99337-2ACA-4080-A62F-9F70E059ED2F}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.DependencyInjection.dll" ComponentId="{8B994D22-F1BE-4A10-B29C-3585A0A1AA31}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll"/>
-    <ROW Component="Microsoft.Extensions.Diagnostics.Abstractions.dll" ComponentId="{A2893724-D4A8-4F69-A964-E00CB88F2CF9}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Diagnostics.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.Diagnostics.dll" ComponentId="{FE40C047-B775-4177-B466-7530651EFF58}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Diagnostics.dll"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll" ComponentId="{9D9CFB42-BB62-4048-899E-3E329E7DC731}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll" ComponentId="{2355BBE1-2274-4C7A-B9AC-21B1403BDBB3}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll"/>
-    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll" ComponentId="{3030A607-6CFF-46B4-BE79-800AF5FFDA00}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll"/>
-    <ROW Component="Microsoft.Extensions.Hosting.Abstractions.dll" ComponentId="{95D8A274-B831-4282-BE66-19B7FE308B5A}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Hosting.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.Hosting.dll" ComponentId="{F276C14A-1E0E-4EB7-A4F8-5CBBD4A7FC4C}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Hosting.dll"/>
-    <ROW Component="Microsoft.Extensions.Logging.Abstractions.dll" ComponentId="{9A606338-E0FF-4BE3-A834-7083388379CB}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Abstractions.dll"/>
-    <ROW Component="Microsoft.Extensions.Logging.Configuration.dll" ComponentId="{EC35D490-8B9B-4C2C-8590-5EC2CECD0BCB}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Configuration.dll"/>
-    <ROW Component="Microsoft.Extensions.Logging.Console.dll" ComponentId="{0596A435-B371-49A6-AEB1-7C35B1794277}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Console.dll"/>
-    <ROW Component="Microsoft.Extensions.Logging.Debug.dll" ComponentId="{A4D1F1D1-56E5-4229-B30B-88C176D7253B}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Debug.dll"/>
-    <ROW Component="Microsoft.Extensions.Logging.EventLog.dll" ComponentId="{6A706A46-9E9B-48F2-99B6-233F90193457}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.EventLog.dll"/>
-    <ROW Component="Microsoft.Extensions.Logging.EventSource.dll" ComponentId="{224C5345-9E0E-41E5-9199-86B69B5A42CC}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.EventSource.dll"/>
-    <ROW Component="Microsoft.Extensions.Logging.dll" ComponentId="{4D49D98F-5AFF-4E4C-B9E4-AED35DD8BBB6}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.dll"/>
-    <ROW Component="Microsoft.Extensions.Options.ConfigurationExtensions.dll" ComponentId="{2FD293B1-5BCE-4D61-9C03-5E86F9239F66}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Options.ConfigurationExtensions.dll"/>
-    <ROW Component="Microsoft.Extensions.Options.dll" ComponentId="{2611D027-86C0-4CF9-BC75-C86ADFC26DD1}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Options.dll"/>
-    <ROW Component="Microsoft.Extensions.Primitives.dll" ComponentId="{016A1B33-4A2F-4C79-B8E2-667F88A16382}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll"/>
-    <ROW Component="Microsoft.Graphics.Display.dll" ComponentId="{8A0E0675-976D-4420-AF46-5B39CB5AF741}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Graphics.Display.dll"/>
-    <ROW Component="Microsoft.InputStateManager.dll" ComponentId="{72E47E2B-4507-4E11-A118-FEAC7543D011}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.InputStateManager.dll"/>
-    <ROW Component="Microsoft.InteractiveExperiences.Projection.dll" ComponentId="{D71368C8-F8D6-4D3E-9BD1-A444ACA66D52}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.InteractiveExperiences.Projection.dll"/>
-    <ROW Component="Microsoft.Internal.FrameworkUdk.dll" ComponentId="{03C93EFB-F4D4-4B85-832A-3E727879583F}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Internal.FrameworkUdk.dll"/>
-    <ROW Component="Microsoft.UI.Composition.OSSupport.dll" ComponentId="{DF8EF8FD-A614-4E74-BD76-E4E57E5C32A2}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Composition.OSSupport.dll"/>
-    <ROW Component="Microsoft.UI.Input.dll" ComponentId="{E6D89530-56E3-4ADE-9B3B-35AEA8846C27}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Input.dll"/>
-    <ROW Component="Microsoft.UI.Windowing.Core.dll" ComponentId="{A504AF62-4A07-412D-B0A6-B4C420CFC7E4}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Windowing.Core.dll"/>
-    <ROW Component="Microsoft.UI.Windowing.dll" ComponentId="{64BB72A0-1754-4380-9173-032DB1F7EE8F}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Windowing.dll"/>
-    <ROW Component="Microsoft.UI.Xaml.Controls.dll" ComponentId="{48660D00-7A2A-4A80-A271-2AD5FADDC4CF}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Xaml.Controls.dll"/>
-    <ROW Component="Microsoft.UI.Xaml.Internal.dll" ComponentId="{32677549-43D3-4415-8CE8-FB5BF4DCEEFC}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Xaml.Internal.dll"/>
-    <ROW Component="Microsoft.UI.Xaml.Phone.dll" ComponentId="{66B43364-7FCF-4D85-9043-C7C79C704A45}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Xaml.Phone.dll"/>
-    <ROW Component="Microsoft.UI.dll" ComponentId="{E063156E-0BD4-4119-BE1A-BDCDBFA09261}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.dll"/>
-    <ROW Component="Microsoft.Web.WebView2.Core.dll" ComponentId="{2788AF74-BCD2-4F3C-B504-E100CD521084}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Web.WebView2.Core.dll"/>
-    <ROW Component="Microsoft.Win32.Registry.dll" ComponentId="{019DC34B-3A84-4639-9430-3EB721BAC5AC}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Win32.Registry.dll"/>
-    <ROW Component="Microsoft.WinUI.dll" ComponentId="{878F16D5-0FE3-4E1A-A389-B43638141F07}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.WinUI.dll"/>
-    <ROW Component="Microsoft.Windows.AppLifecycle.Projection.dll" ComponentId="{819CB4D2-B4B5-471C-ABF7-006AF6C29CDC}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.AppLifecycle.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.AppNotifications.Builder.Projection.dll" ComponentId="{A4F667AD-ACB9-4656-A220-4D3149A41E75}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.AppNotifications.Builder.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.AppNotifications.Projection.dll" ComponentId="{18300EF3-819C-44CB-BD7C-980724882615}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.AppNotifications.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll" ComponentId="{D5B4B7D6-D605-4C81-849E-82DA981FE5D7}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.ApplicationModel.Resources.Projection.dll" ComponentId="{EFBFD9C3-E4A3-48ED-9145-874C8E7713DD}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.Resources.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.ApplicationModel.Resources.dll" ComponentId="{D6A804A7-7E9C-4794-831C-EE1C2AACAC38}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Windows.ApplicationModel.Resources.dll"/>
-    <ROW Component="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll" ComponentId="{D633FFC8-4478-4858-8EE9-1F51DA662ABA}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.PushNotifications.Projection.dll" ComponentId="{44DA742C-D291-4175-A9A1-15EC9A80540C}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.PushNotifications.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.SDK.NET.dll" ComponentId="{BC93763F-BD2A-4B25-A5F2-F165E00152DD}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.SDK.NET.dll"/>
-    <ROW Component="Microsoft.Windows.Security.AccessControl.Projection.dll" ComponentId="{D7CDA44D-F4B4-4AA1-B3E4-38651FCEF45C}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.Security.AccessControl.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.System.Power.Projection.dll" ComponentId="{E0FDD542-04FB-4387-8696-062165A9B23B}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.System.Power.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.System.Projection.dll" ComponentId="{1526E5DB-E2E8-41AA-BC33-4ECD3B1BBCF7}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.System.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.Widgets.Providers.Projection.dll" ComponentId="{CD3CF32C-83FC-4CE1-AC9A-962E0ADAF76F}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.Widgets.Providers.Projection.dll"/>
-    <ROW Component="Microsoft.Windows.Widgets.dll" ComponentId="{4E44E921-AB14-4E50-B9FD-BC5A170E9C94}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Windows.Widgets.dll"/>
-    <ROW Component="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll" ComponentId="{31D75D1B-0831-495B-BDE4-67FFF5F98FE8}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll"/>
-    <ROW Component="Microsoft.WindowsAppRuntime.Bootstrap.dll" ComponentId="{9ADD05A0-53C9-4571-84F4-EA3F91392F45}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.WindowsAppRuntime.Bootstrap.dll"/>
-    <ROW Component="Microsoft.WindowsAppRuntime.Insights.Resource.dll" ComponentId="{0FE07F32-AFDF-4872-BF0F-5CCE43BC24DA}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.WindowsAppRuntime.Insights.Resource.dll"/>
-    <ROW Component="Microsoft.WindowsAppRuntime.dll" ComponentId="{38B40F92-8DA3-4D02-BEC7-07FAFC71FDD7}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.WindowsAppRuntime.dll"/>
-    <ROW Component="Microsoft.Xaml.Interactions.dll" ComponentId="{EFC0D98B-A6FE-4A14-8C8D-0F9D2AA45C51}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Interactions.dll"/>
-    <ROW Component="Microsoft.Xaml.Interactivity.dll" ComponentId="{B48019C7-7CF8-4B38-93DB-6CC0E317CCC8}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Interactivity.dll"/>
-    <ROW Component="Microsoft.ui.xaml.dll" ComponentId="{9BCF1494-ED96-4D80-8866-3F8550115183}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.dll"/>
-    <ROW Component="Microsoft.ui.xaml.dll.mui" ComponentId="{ECE479E6-6637-416F-9268-1EE7E319A589}" Directory_="enus_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.dll.mui" Type="0"/>
-    <ROW Component="Microsoft.ui.xaml.dll.mui_1" ComponentId="{504CC28D-140F-4506-A067-5A8163FB0C05}" Directory_="zhCN_Dir" Attributes="0" KeyPath="Microsoft.ui.xaml.dll.mui_1" Type="0"/>
-    <ROW Component="Microsoft.ui.xaml.resources.19h1.dll" ComponentId="{C635440F-FDE9-4C0D-A392-5A58302A8717}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.resources.19h1.dll"/>
-    <ROW Component="Microsoft.ui.xaml.resources.common.dll" ComponentId="{FAAE209D-48D1-4533-9778-E14D6495049C}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.resources.common.dll"/>
-    <ROW Component="Newtonsoft.Json.dll" ComponentId="{28BC3A9F-FBCF-4BF1-A5B2-6E53D503DB0F}" Directory_="RandList_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
-    <ROW Component="NoiseAsset_256x256_PNG.png" ComponentId="{178ED67E-C45A-429E-9AE1-A443D57735C0}" Directory_="Assets_1_Dir" Attributes="0" KeyPath="NoiseAsset_256x256_PNG.png" Type="0"/>
+    <ROW Component="Microsoft.CSharp.dll" ComponentId="{4A4611CC-933D-474A-8D92-EA4DC29420F4}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.CSharp.dll"/>
+    <ROW Component="Microsoft.DiaSymReader.Native.amd64.dll" ComponentId="{2931EC4E-1CDD-4FDA-B730-06A149DE2AAD}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.DiaSymReader.Native.amd64.dll"/>
+    <ROW Component="Microsoft.DirectManipulation.dll" ComponentId="{CB7B86AC-4CE2-460E-978E-F14B5647C6ED}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.DirectManipulation.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Abstractions.dll" ComponentId="{3EF20938-44AD-44D4-B4AD-D8BB44462F93}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Binder.dll" ComponentId="{9D035932-4AEF-40B5-8167-8810FE61662A}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Binder.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.CommandLine.dll" ComponentId="{65C84C53-2177-4269-AB63-0B2E0D43D7F4}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.CommandLine.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.EnvironmentVariables.dll" ComponentId="{7CF03050-21A2-45DB-B955-27D6D2AD5653}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.EnvironmentVariables.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.FileExtensions.dll" ComponentId="{ADBE9F90-CCA7-4955-96D3-979310FA6FAD}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.FileExtensions.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.Json.dll" ComponentId="{4EED21CE-E78D-43CE-870E-FBF433F0F816}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.Json.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.UserSecrets.dll" ComponentId="{07C019CF-FF4C-48C9-9AA2-F7ACB4E5FF67}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.UserSecrets.dll"/>
+    <ROW Component="Microsoft.Extensions.Configuration.dll" ComponentId="{C51E3CF2-6B40-4C73-8BA3-4A16D4759F64}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Configuration.dll"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.Abstractions.dll" ComponentId="{B4250DA3-72D4-4EF6-8DA4-8DD9D446A630}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.DependencyInjection.dll" ComponentId="{09427EE2-D001-441F-A5BA-4B3176C66EA9}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.DependencyInjection.dll"/>
+    <ROW Component="Microsoft.Extensions.Diagnostics.Abstractions.dll" ComponentId="{CEF13712-2E25-4A9C-AB40-B1733A54B208}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Diagnostics.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Diagnostics.dll" ComponentId="{F7B570C2-B432-476D-AACF-6E4ADFD7736F}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Diagnostics.dll"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Abstractions.dll" ComponentId="{99A20A57-88D0-4E5D-AFCE-5D0739DB07D4}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.FileProviders.Physical.dll" ComponentId="{AF4EA686-70A0-4F00-9337-3497DB748258}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileProviders.Physical.dll"/>
+    <ROW Component="Microsoft.Extensions.FileSystemGlobbing.dll" ComponentId="{E81FD53C-1091-4409-8A3D-EEEB2DD41D6B}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.FileSystemGlobbing.dll"/>
+    <ROW Component="Microsoft.Extensions.Hosting.Abstractions.dll" ComponentId="{12DA96DD-73B4-48E0-BE38-75A1082C49C3}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Hosting.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Hosting.dll" ComponentId="{B9DBC90C-F4AE-4B2E-BA38-17617254A502}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Hosting.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.Abstractions.dll" ComponentId="{70678DEF-03D3-498C-98EE-2395F78B2A5E}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Abstractions.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.Configuration.dll" ComponentId="{13BE73DC-CA05-4D06-A817-1ADA4993DFF1}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Configuration.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.Console.dll" ComponentId="{C4D53A5E-5F22-4DEB-A2CA-0D92C0088FFA}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Console.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.Debug.dll" ComponentId="{FB67B8A3-DDE8-4E65-8C67-F6544F947E65}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.Debug.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.EventLog.dll" ComponentId="{B9757A44-27B2-453D-A6E2-D2AB8C743867}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.EventLog.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.EventSource.dll" ComponentId="{7226FF2A-7C0E-461B-8ABC-DB6DEAB5DC99}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.EventSource.dll"/>
+    <ROW Component="Microsoft.Extensions.Logging.dll" ComponentId="{FCA20231-360B-4CB8-87D2-63EBCEE41DA4}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Logging.dll"/>
+    <ROW Component="Microsoft.Extensions.Options.ConfigurationExtensions.dll" ComponentId="{AFEFBC71-FFC2-4F00-B794-5658564DE51F}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Options.ConfigurationExtensions.dll"/>
+    <ROW Component="Microsoft.Extensions.Options.dll" ComponentId="{9BB6C7AE-9CBC-418E-8218-88781FB2A9B0}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Options.dll"/>
+    <ROW Component="Microsoft.Extensions.Primitives.dll" ComponentId="{45ABE786-0761-400D-8D2A-932A1D1ABC18}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Extensions.Primitives.dll"/>
+    <ROW Component="Microsoft.Graphics.Display.dll" ComponentId="{FF96C16C-FBB0-4D34-A694-01CCA69A2EB7}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Graphics.Display.dll"/>
+    <ROW Component="Microsoft.InputStateManager.dll" ComponentId="{3D119B07-189E-45D4-B476-98BC537E09E3}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.InputStateManager.dll"/>
+    <ROW Component="Microsoft.InteractiveExperiences.Projection.dll" ComponentId="{CFCFFB90-E52A-457E-B30B-B0137E066BB2}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.InteractiveExperiences.Projection.dll"/>
+    <ROW Component="Microsoft.Internal.FrameworkUdk.dll" ComponentId="{8E652E74-368C-4CC7-8367-A0E34C671587}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Internal.FrameworkUdk.dll"/>
+    <ROW Component="Microsoft.UI.Composition.OSSupport.dll" ComponentId="{259D522C-7B41-4FF6-B114-245F431388DE}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Composition.OSSupport.dll"/>
+    <ROW Component="Microsoft.UI.Input.dll" ComponentId="{047992A4-490B-4903-A9AD-E0F477729E3E}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Input.dll"/>
+    <ROW Component="Microsoft.UI.Windowing.Core.dll" ComponentId="{288C15A8-7769-4FC4-AFBD-007626D96E95}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Windowing.Core.dll"/>
+    <ROW Component="Microsoft.UI.Windowing.dll" ComponentId="{B8EC7379-4AF9-4009-96E7-F9C3588E3C07}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Windowing.dll"/>
+    <ROW Component="Microsoft.UI.Xaml.Controls.dll" ComponentId="{47428036-A91D-48D3-94EC-31C08FF0655C}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Xaml.Controls.dll"/>
+    <ROW Component="Microsoft.UI.Xaml.Internal.dll" ComponentId="{BFBAB110-0163-496A-BCA0-746B4969B3A1}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Xaml.Internal.dll"/>
+    <ROW Component="Microsoft.UI.Xaml.Phone.dll" ComponentId="{8A0840D7-6B34-4559-B4E0-6D10E1178253}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.Xaml.Phone.dll"/>
+    <ROW Component="Microsoft.UI.dll" ComponentId="{269DE863-639F-4C21-BD97-3487E06E81AD}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.UI.dll"/>
+    <ROW Component="Microsoft.Web.WebView2.Core.dll" ComponentId="{50A7095E-7BED-403C-8AEB-9D5B32ACD370}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Web.WebView2.Core.dll"/>
+    <ROW Component="Microsoft.Win32.Registry.dll" ComponentId="{DF465C1B-F142-4325-AE78-F7DA4F5756AC}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Win32.Registry.dll"/>
+    <ROW Component="Microsoft.WinUI.dll" ComponentId="{7F4C35F5-DB17-4B40-86E4-FCA8332EA8EB}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.WinUI.dll"/>
+    <ROW Component="Microsoft.Windows.AppLifecycle.Projection.dll" ComponentId="{082DBA2B-C72F-49D0-963D-5CCD351EDBD0}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.AppLifecycle.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AppNotifications.Builder.Projection.dll" ComponentId="{DFE52EF5-268A-451E-86C0-3E065EF9D588}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.AppNotifications.Builder.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.AppNotifications.Projection.dll" ComponentId="{61531740-0CA0-471C-B9F6-9236B4160A63}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.AppNotifications.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll" ComponentId="{B2B3B7B8-D5B3-44EA-BAC5-C68497D91339}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.Resources.Projection.dll" ComponentId="{1279330A-8597-430C-BF8D-FEEAFD2D2A59}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.Resources.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.Resources.dll" ComponentId="{44243B53-2D12-4DD4-8C05-E9596117E51E}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Windows.ApplicationModel.Resources.dll"/>
+    <ROW Component="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll" ComponentId="{94E77414-BA26-47FF-9ACC-F5BCD178B8D5}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.PushNotifications.Projection.dll" ComponentId="{E3B8BD6C-E80E-41D3-86A5-64800A3C0241}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.PushNotifications.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.SDK.NET.dll" ComponentId="{8C5BCB12-7F1E-4E64-A2B5-C72278A2F9EE}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.SDK.NET.dll"/>
+    <ROW Component="Microsoft.Windows.Security.AccessControl.Projection.dll" ComponentId="{D51A8FB4-A986-4E18-80ED-78D21A63A082}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.Security.AccessControl.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.System.Power.Projection.dll" ComponentId="{6A23CB6F-CE31-41F7-AB78-0442F07F149F}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.System.Power.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.System.Projection.dll" ComponentId="{CCCE21BD-C978-4785-BCA3-5C49E87A5786}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.System.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Widgets.Providers.Projection.dll" ComponentId="{961C2BF9-FD8B-4552-8E6C-197C3D7C3B1F}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Windows.Widgets.Providers.Projection.dll"/>
+    <ROW Component="Microsoft.Windows.Widgets.dll" ComponentId="{963765FC-0B02-4805-9BF1-9C3583A29AD6}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.Windows.Widgets.dll"/>
+    <ROW Component="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll" ComponentId="{F4B11675-8F19-4701-9AC7-EF82AF272E2B}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.WindowsAppRuntime.Bootstrap.Net.dll"/>
+    <ROW Component="Microsoft.WindowsAppRuntime.Bootstrap.dll" ComponentId="{DE8E7FC2-97EA-4BD9-9087-4299CCD905E5}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.WindowsAppRuntime.Bootstrap.dll"/>
+    <ROW Component="Microsoft.WindowsAppRuntime.Insights.Resource.dll" ComponentId="{7EE5A1B9-DE44-4ED0-8D47-B683A656392D}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.WindowsAppRuntime.Insights.Resource.dll"/>
+    <ROW Component="Microsoft.WindowsAppRuntime.dll" ComponentId="{15EA8F05-5694-45D5-B443-37F20A01F1C4}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.WindowsAppRuntime.dll"/>
+    <ROW Component="Microsoft.Xaml.Interactions.dll" ComponentId="{2061E71E-3195-4482-8B90-DAFA6D99633E}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Interactions.dll"/>
+    <ROW Component="Microsoft.Xaml.Interactivity.dll" ComponentId="{BE95C7BE-024E-4A31-9714-FC24F0888488}" Directory_="RandList_Dir" Attributes="0" KeyPath="Microsoft.Xaml.Interactivity.dll"/>
+    <ROW Component="Microsoft.ui.xaml.dll" ComponentId="{034329F9-AC04-4A47-83EE-DD9653205D11}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.dll"/>
+    <ROW Component="Microsoft.ui.xaml.dll.mui" ComponentId="{76C5BEF1-EC89-4FDB-8705-BB7428DF5384}" Directory_="enus_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.dll.mui" Type="0"/>
+    <ROW Component="Microsoft.ui.xaml.dll.mui_1" ComponentId="{1FE44069-AD3A-4B68-BE34-A2118485C129}" Directory_="zhCN_Dir" Attributes="0" KeyPath="Microsoft.ui.xaml.dll.mui_1" Type="0"/>
+    <ROW Component="Microsoft.ui.xaml.resources.19h1.dll" ComponentId="{5C85B1A1-A58F-4B5E-844F-60D7DE269855}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.resources.19h1.dll"/>
+    <ROW Component="Microsoft.ui.xaml.resources.common.dll" ComponentId="{929A4325-7249-4B1C-950C-6E716E1679E2}" Directory_="RandList_Dir" Attributes="256" KeyPath="Microsoft.ui.xaml.resources.common.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{F3576C88-9B33-4A6F-99B1-3911E4176829}" Directory_="RandList_Dir" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="NoiseAsset_256x256_PNG.png" ComponentId="{123FF7BB-887B-4F84-8726-1FDE85F1ABBB}" Directory_="Assets_1_Dir" Attributes="0" KeyPath="NoiseAsset_256x256_PNG.png" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{A86302A5-DA42-43FB-8311-721AE1F5C969}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="ProductName" ComponentId="{B8A32DB4-8C62-4796-AD1B-5DA83F6F7C77}" Directory_="APPDIR" Attributes="260" KeyPath="ProductName"/>
-    <ROW Component="PushNotificationsLongRunningTask.ProxyStub.dll" ComponentId="{86DB4C67-DD36-40A3-8008-051773F9F491}" Directory_="RandList_Dir" Attributes="256" KeyPath="PushNotificationsLongRunningTask.ProxyStub.dll"/>
-    <ROW Component="RandList.Core.dll" ComponentId="{E71D8436-1E15-47EC-9D8B-B39C949C5F9E}" Directory_="RandList_Dir" Attributes="256" KeyPath="RandList.Core.dll"/>
-    <ROW Component="RandList.dll" ComponentId="{D8ED25C1-359D-473F-91BD-BB508C2116E3}" Directory_="RandList_Dir" Attributes="256" KeyPath="RandList.dll"/>
-    <ROW Component="RandList.exe" ComponentId="{0C06C829-AC37-41AA-88EF-067A6DDEB0A9}" Directory_="RandList_Dir" Attributes="256" KeyPath="RandList.exe"/>
-    <ROW Component="RandList.runtimeconfig.json" ComponentId="{EC74C4D1-F787-4002-8F4D-68F7CF40125E}" Directory_="RandList_Dir" Attributes="0" KeyPath="RandList.runtimeconfig.json"/>
-    <ROW Component="RestartAgent.exe" ComponentId="{53313237-582B-457B-8CF8-627700EFFAFB}" Directory_="RandList_Dir" Attributes="256" KeyPath="RestartAgent.exe"/>
-    <ROW Component="SHORTCUTDIR" ComponentId="{9E09E814-0A4C-4447-88DA-382DD9630D5C}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="SplashScreen.scale100.png" ComponentId="{E18F8809-FB77-44F1-81E2-07FD1C3F3F53}" Directory_="Assets_Dir" Attributes="0" KeyPath="SplashScreen.scale100.png" Type="0"/>
-    <ROW Component="System.Collections.Concurrent.dll" ComponentId="{BDEE29A1-9FD9-4E87-8824-9B36B88424CB}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.Concurrent.dll"/>
-    <ROW Component="System.Collections.Immutable.dll" ComponentId="{2E0FCD71-F477-4BCB-9DCF-F4DEE7906BA1}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.Immutable.dll"/>
-    <ROW Component="System.Collections.NonGeneric.dll" ComponentId="{700D08ED-CEF6-4108-AAE2-1D1B66E858AD}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.NonGeneric.dll"/>
-    <ROW Component="System.Collections.Specialized.dll" ComponentId="{4E9B578A-EF4C-4DE9-854B-403D8767897B}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.Specialized.dll"/>
-    <ROW Component="System.Collections.dll" ComponentId="{451FCE57-843B-4185-B6A1-DDF96322C2CE}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.dll"/>
-    <ROW Component="System.ComponentModel.Primitives.dll" ComponentId="{9E7206A7-59CF-4196-840F-E127ED618C86}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ComponentModel.Primitives.dll"/>
-    <ROW Component="System.ComponentModel.TypeConverter.dll" ComponentId="{328F63AB-6B64-440E-84BC-4B2BD25EC0DE}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ComponentModel.TypeConverter.dll"/>
-    <ROW Component="System.ComponentModel.dll" ComponentId="{D9A8FE32-B074-42E6-9DB6-F7F4DB162A7A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ComponentModel.dll"/>
-    <ROW Component="System.Configuration.ConfigurationManager.dll" ComponentId="{8838D50E-463E-480A-894B-56BA0D08B6CD}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Configuration.ConfigurationManager.dll"/>
-    <ROW Component="System.Console.dll" ComponentId="{01F25DFA-875D-4DDE-A1BF-AABCCC685D24}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Console.dll"/>
-    <ROW Component="System.Data.Common.dll" ComponentId="{2573A963-B722-4C9B-8DB5-A09D7D29C0C8}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Data.Common.dll"/>
-    <ROW Component="System.Diagnostics.DiagnosticSource.dll" ComponentId="{0FD3D7FC-9E6C-488B-B843-1DA6CBD40DAF}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.DiagnosticSource.dll"/>
-    <ROW Component="System.Diagnostics.EventLog.dll" ComponentId="{FA3FAFDF-0FB3-434C-BE3D-6ECDA2451207}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll"/>
-    <ROW Component="System.Diagnostics.Process.dll" ComponentId="{B526B183-D5D9-4688-B8E3-6F3B0223BD6C}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.Process.dll"/>
-    <ROW Component="System.Diagnostics.StackTrace.dll" ComponentId="{93F5B1C7-7B62-4BE3-B97F-7F27BE95B617}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.StackTrace.dll"/>
-    <ROW Component="System.Diagnostics.TextWriterTraceListener.dll" ComponentId="{D19513C0-19A3-41F8-B411-9CA166454A5E}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.TextWriterTraceListener.dll"/>
-    <ROW Component="System.Diagnostics.TraceSource.dll" ComponentId="{AF2B1BC6-989A-4239-99D2-43BC7D3766CF}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.TraceSource.dll"/>
-    <ROW Component="System.Drawing.Primitives.dll" ComponentId="{5D1BB7A7-1A07-484F-B046-764075C40868}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Drawing.Primitives.dll"/>
-    <ROW Component="System.Drawing.dll" ComponentId="{E8C44B04-2C18-4126-9736-AE67A1E40392}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Drawing.dll"/>
-    <ROW Component="System.Formats.Asn1.dll" ComponentId="{F8ED5E4A-4EE6-4EC3-AF3F-CF6CE4252DAB}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Formats.Asn1.dll"/>
-    <ROW Component="System.IO.Compression.Brotli.dll" ComponentId="{F85AE0CD-4032-4BE8-92C8-659800D76E5A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.Compression.Brotli.dll"/>
-    <ROW Component="System.IO.Compression.Native.dll" ComponentId="{11F219D9-01E4-48E9-BD9B-5BA94BD676B2}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.Compression.Native.dll"/>
-    <ROW Component="System.IO.Compression.dll" ComponentId="{D8B246A0-6584-4851-B5B4-FC30EFCED5B9}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.Compression.dll"/>
-    <ROW Component="System.IO.FileSystem.Watcher.dll" ComponentId="{3E71027E-EC38-4D61-97C7-0D59F168A4C4}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.FileSystem.Watcher.dll"/>
-    <ROW Component="System.IO.MemoryMappedFiles.dll" ComponentId="{E71E010E-DA4A-4CC7-8750-C894CC63EB5A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.MemoryMappedFiles.dll"/>
-    <ROW Component="System.Linq.Expressions.dll" ComponentId="{33F48F12-3C5C-4E29-A939-2AF010FDDF09}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Linq.Expressions.dll"/>
-    <ROW Component="System.Linq.dll" ComponentId="{A4FA0A13-6FB2-4687-A3E1-E6D4DE297A1B}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Linq.dll"/>
-    <ROW Component="System.Memory.dll" ComponentId="{A6A861E9-592C-4351-8693-77CF20EF964A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Memory.dll"/>
-    <ROW Component="System.Net.Http.dll" ComponentId="{9685F3C4-3613-4E89-9E13-EFFE2EAA289B}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Http.dll"/>
-    <ROW Component="System.Net.NameResolution.dll" ComponentId="{B82748BD-00A4-48E3-8ACD-58EE2332A66A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.NameResolution.dll"/>
-    <ROW Component="System.Net.NetworkInformation.dll" ComponentId="{BEF5E4F9-6642-41B1-82A5-FD53AF6BF145}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.NetworkInformation.dll"/>
-    <ROW Component="System.Net.Primitives.dll" ComponentId="{81B911B3-B54D-4592-BCC7-37BB91FE7D0F}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Primitives.dll"/>
-    <ROW Component="System.Net.Quic.dll" ComponentId="{A355FCB6-2B56-466E-89A8-ED6651B363D8}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Quic.dll"/>
-    <ROW Component="System.Net.Requests.dll" ComponentId="{BE38343D-AE35-4542-B277-438FFDA1B118}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Requests.dll"/>
-    <ROW Component="System.Net.Security.dll" ComponentId="{69E02C16-FFEF-4B44-A780-8B19A31A9519}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Security.dll"/>
-    <ROW Component="System.Net.ServicePoint.dll" ComponentId="{8B92C75B-0B4B-437B-BB8C-C5534728B107}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.ServicePoint.dll"/>
-    <ROW Component="System.Net.Sockets.dll" ComponentId="{102B77B4-A88A-4CCA-96B6-95513EA61FC4}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Sockets.dll"/>
-    <ROW Component="System.Net.WebClient.dll" ComponentId="{50C8331E-3648-438F-96BC-DAA40D93E408}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.WebClient.dll"/>
-    <ROW Component="System.Net.WebHeaderCollection.dll" ComponentId="{57D94528-E845-446B-ABAB-A7DA458DF813}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.WebHeaderCollection.dll"/>
-    <ROW Component="System.ObjectModel.dll" ComponentId="{3371333A-7D14-4244-AD3D-1F04D0EC84C2}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ObjectModel.dll"/>
-    <ROW Component="System.Private.CoreLib.dll" ComponentId="{6FF096EF-013F-4E0C-9EB8-34DAA788C9AE}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.CoreLib.dll"/>
-    <ROW Component="System.Private.Uri.dll" ComponentId="{FBDDC38E-3D70-49BD-9379-748E4E5055E4}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.Uri.dll"/>
-    <ROW Component="System.Private.Xml.Linq.dll" ComponentId="{3DB6AD70-F36F-4F08-A42A-AA150832B745}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.Xml.Linq.dll"/>
-    <ROW Component="System.Private.Xml.dll" ComponentId="{F20A4659-066A-4429-A1A3-8DCA68F4EF8B}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.Xml.dll"/>
-    <ROW Component="System.Reflection.Emit.ILGeneration.dll" ComponentId="{A81DFCE5-7385-4C8D-859E-8FB16E2BD615}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Reflection.Emit.ILGeneration.dll"/>
-    <ROW Component="System.Reflection.Emit.Lightweight.dll" ComponentId="{4CD4E3E7-5DD9-4689-974D-F102A3239582}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Reflection.Emit.Lightweight.dll"/>
-    <ROW Component="System.Reflection.Metadata.dll" ComponentId="{241D8A91-D162-4D46-BAF6-D7BE4DC215F1}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Reflection.Metadata.dll"/>
-    <ROW Component="System.Reflection.Primitives.dll" ComponentId="{170B69A0-90B6-40BD-95F1-6FEB5FED5A48}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Reflection.Primitives.dll"/>
-    <ROW Component="System.Runtime.InteropServices.dll" ComponentId="{976909CB-860D-4899-8FF3-106F0713F468}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.InteropServices.dll"/>
-    <ROW Component="System.Runtime.Numerics.dll" ComponentId="{A24F7C50-92C6-4E04-8737-19DC12F966B5}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.Numerics.dll"/>
-    <ROW Component="System.Runtime.Serialization.Formatters.dll" ComponentId="{4786BCCE-D733-4ABC-8ACE-5B1865CF4FE4}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.Serialization.Formatters.dll"/>
-    <ROW Component="System.Runtime.Serialization.Primitives.dll" ComponentId="{1628BA8C-7873-48EA-95B1-32B0A9CC3C4E}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.Serialization.Primitives.dll"/>
-    <ROW Component="System.Runtime.dll" ComponentId="{C26840A2-2CDA-4042-B5C1-27F92F00DCDA}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Runtime.dll"/>
-    <ROW Component="System.Security.Claims.dll" ComponentId="{FA323333-AE11-4A03-A9D2-3685BAC46566}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Security.Claims.dll"/>
-    <ROW Component="System.Security.Cryptography.ProtectedData.dll" ComponentId="{745C89A2-6897-4B93-8113-D2E4F9150CA1}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Security.Cryptography.ProtectedData.dll"/>
-    <ROW Component="System.Security.Cryptography.dll" ComponentId="{15158C83-570D-4197-8360-50689DCD8DB7}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Security.Cryptography.dll"/>
-    <ROW Component="System.Security.Principal.Windows.dll" ComponentId="{AE89B467-305F-4274-8898-20E13D8F6936}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Security.Principal.Windows.dll"/>
-    <ROW Component="System.Text.Encoding.Extensions.dll" ComponentId="{87C0170F-2495-4DF6-971A-3AB24692BD87}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Text.Encoding.Extensions.dll"/>
-    <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{8D3D508F-7351-4331-BA37-C622A61BF182}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Text.Encodings.Web.dll"/>
-    <ROW Component="System.Text.Json.dll" ComponentId="{9C0B4DED-F7A5-43A7-AAD4-8055849198EA}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Text.Json.dll"/>
-    <ROW Component="System.Text.RegularExpressions.dll" ComponentId="{B0C0BB00-45D4-4A05-8D72-68971788791C}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Text.RegularExpressions.dll"/>
-    <ROW Component="System.Threading.Channels.dll" ComponentId="{269E10A3-24EF-4B5E-826B-964C703BAC63}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Threading.Channels.dll"/>
-    <ROW Component="System.Threading.Thread.dll" ComponentId="{D9C742AD-F278-4918-989D-77FE1D91C6D5}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Threading.Thread.dll"/>
-    <ROW Component="System.Threading.dll" ComponentId="{1397071F-2105-4519-825D-470747C6D67A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Threading.dll"/>
-    <ROW Component="System.Xml.Linq.dll" ComponentId="{EDB9BEEA-AFEF-443D-84D4-70239261558A}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.Linq.dll"/>
-    <ROW Component="System.Xml.ReaderWriter.dll" ComponentId="{6A2C9878-8AF8-4F17-8390-8546AE92BD54}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.ReaderWriter.dll"/>
-    <ROW Component="System.Xml.XDocument.dll" ComponentId="{3A406738-1995-4EE4-9718-7E8CCB7ACAFC}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.XDocument.dll"/>
-    <ROW Component="System.Xml.XmlSerializer.dll" ComponentId="{083905EF-6181-4B4B-8787-2DC830C811AC}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.XmlSerializer.dll"/>
-    <ROW Component="System.dll" ComponentId="{79B74176-1D7D-4256-A262-6891FBA22D08}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.dll"/>
-    <ROW Component="WinRT.Runtime.dll" ComponentId="{A3275611-168B-4E45-8D0D-659767C8CF64}" Directory_="RandList_Dir" Attributes="0" KeyPath="WinRT.Runtime.dll"/>
-    <ROW Component="WinUIEdit.dll" ComponentId="{C3F76247-8CBC-4226-AC34-D1445A83577A}" Directory_="RandList_Dir" Attributes="256" KeyPath="WinUIEdit.dll"/>
-    <ROW Component="WinUIEx.dll" ComponentId="{B9710DE9-9B4A-404E-8202-AEAA1E2B8C83}" Directory_="RandList_Dir" Attributes="0" KeyPath="WinUIEx.dll"/>
-    <ROW Component="WindowsAppSdk.AppxDeploymentExtensions.Desktop.dll" ComponentId="{F5631C60-2612-4D5E-BCE0-79CFDFE9577A}" Directory_="RandList_Dir" Attributes="256" KeyPath="WindowsAppSdk.AppxDeploymentExtensions.Desktop.dll"/>
-    <ROW Component="WindowsAppSdk.AppxDeploymentExtensions.DesktopEventLogInstrumentation.dl" ComponentId="{0693F44F-F44E-4596-84C6-540929CC0AD1}" Directory_="RandList_Dir" Attributes="256" KeyPath="WindowsAppSdk.AppxDeploymentExtensions.DesktopEventLogInstrumentation"/>
-    <ROW Component="clretwrc.dll" ComponentId="{541A229D-F0C8-4F4D-8360-D9E36F98804C}" Directory_="RandList_Dir" Attributes="256" KeyPath="clretwrc.dll"/>
-    <ROW Component="clrgc.dll" ComponentId="{7728D4B4-43D1-4934-B67B-D77D96E1BB83}" Directory_="RandList_Dir" Attributes="256" KeyPath="clrgc.dll"/>
-    <ROW Component="clrjit.dll" ComponentId="{3FB69300-2693-464E-B39E-086956F61D91}" Directory_="RandList_Dir" Attributes="256" KeyPath="clrjit.dll"/>
-    <ROW Component="coreclr.dll" ComponentId="{F2F4C7A3-C46C-4DD9-8B52-52F7DD79149C}" Directory_="RandList_Dir" Attributes="256" KeyPath="coreclr.dll"/>
-    <ROW Component="createdump.exe" ComponentId="{6B5C6E0D-111A-45EB-867B-25B259F399BA}" Directory_="RandList_Dir" Attributes="256" KeyPath="createdump.exe"/>
-    <ROW Component="dcompi.dll" ComponentId="{7E578938-BCC0-4072-AD87-97483F56018E}" Directory_="RandList_Dir" Attributes="256" KeyPath="dcompi.dll"/>
-    <ROW Component="dwmcorei.dll" ComponentId="{2D0477F1-EED3-469B-90B2-079A244F66ED}" Directory_="RandList_Dir" Attributes="256" KeyPath="dwmcorei.dll"/>
-    <ROW Component="hostfxr.dll" ComponentId="{9A58BFE0-3D66-45F2-B621-310370281640}" Directory_="RandList_Dir" Attributes="256" KeyPath="hostfxr.dll"/>
-    <ROW Component="hostpolicy.dll" ComponentId="{B01DE65B-C89E-42C5-9C40-995EBD28AF97}" Directory_="RandList_Dir" Attributes="256" KeyPath="hostpolicy.dll"/>
-    <ROW Component="marshal.dll" ComponentId="{84E2107B-7C7B-4D55-9B0E-B7F6F001482B}" Directory_="RandList_Dir" Attributes="256" KeyPath="marshal.dll"/>
-    <ROW Component="mscordaccore.dll" ComponentId="{EFE53646-7CEE-427E-83DB-FC2DD15C67A5}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscordaccore.dll"/>
-    <ROW Component="mscordaccore_amd64_amd64_8.0.23.53103.dll" ComponentId="{DAD332E1-C960-46DB-988C-AB36E8414204}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscordaccore_amd64_amd64_8.0.23.53103.dll"/>
-    <ROW Component="mscordbi.dll" ComponentId="{D9F3DCBB-1202-471D-A53F-BFE8816FD0DC}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscordbi.dll"/>
-    <ROW Component="mscorrc.dll" ComponentId="{2CDFA0EB-23F1-4B31-B17C-C3EB97CD219D}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscorrc.dll"/>
-    <ROW Component="msquic.dll" ComponentId="{6BB80964-C75A-4897-8068-49C4965EED9D}" Directory_="RandList_Dir" Attributes="256" KeyPath="msquic.dll"/>
-    <ROW Component="netstandard.dll" ComponentId="{A1382FF5-F399-4AC3-8953-D0BF59C83C24}" Directory_="RandList_Dir" Attributes="0" KeyPath="netstandard.dll"/>
-    <ROW Component="wuceffectsi.dll" ComponentId="{C5E9C44B-A2FD-4B17-B341-47D7E95D2EDB}" Directory_="RandList_Dir" Attributes="256" KeyPath="wuceffectsi.dll"/>
+    <ROW Component="PushNotificationsLongRunningTask.ProxyStub.dll" ComponentId="{B98B0083-8860-4EC4-8557-75AD76DF5000}" Directory_="RandList_Dir" Attributes="256" KeyPath="PushNotificationsLongRunningTask.ProxyStub.dll"/>
+    <ROW Component="RandList.Core.dll" ComponentId="{17F0EAC8-A36B-42DC-BFE9-3DAB1DBFCB4B}" Directory_="RandList_Dir" Attributes="256" KeyPath="RandList.Core.dll"/>
+    <ROW Component="RandList.dll" ComponentId="{D5ADFFC4-1509-4EAF-B754-90DCB96019CD}" Directory_="RandList_Dir" Attributes="256" KeyPath="RandList.dll"/>
+    <ROW Component="RandList.exe" ComponentId="{DD500FC0-ADB1-4D44-A501-263F7C3C73B1}" Directory_="RandList_Dir" Attributes="256" KeyPath="RandList.exe"/>
+    <ROW Component="RestartAgent.exe" ComponentId="{504EEA8A-C1A5-4954-9881-A8B1037AA3F4}" Directory_="RandList_Dir" Attributes="256" KeyPath="RestartAgent.exe"/>
+    <ROW Component="SplashScreen.scale100.png" ComponentId="{54D1B381-F39C-4A7E-9223-89D71FDB4ADF}" Directory_="Assets_Dir" Attributes="0" KeyPath="SplashScreen.scale100.png" Type="0"/>
+    <ROW Component="System.Collections.Concurrent.dll" ComponentId="{7FBDFF64-3F7C-409A-9BAB-9AB3AAC4B733}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.Concurrent.dll"/>
+    <ROW Component="System.Collections.Immutable.dll" ComponentId="{AC5C6B58-4C41-4188-9A09-36979A5A582A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.Immutable.dll"/>
+    <ROW Component="System.Collections.NonGeneric.dll" ComponentId="{D09E38B9-00C0-4E4A-8F9C-04F541644BE5}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.NonGeneric.dll"/>
+    <ROW Component="System.Collections.Specialized.dll" ComponentId="{147FDA06-4704-4426-8A31-28F220573DE3}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.Specialized.dll"/>
+    <ROW Component="System.Collections.dll" ComponentId="{DAD9E85C-1DB4-4232-86DB-870727BD7EEB}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Collections.dll"/>
+    <ROW Component="System.ComponentModel.Primitives.dll" ComponentId="{C3ADBEB7-3EF3-4D5B-BD32-14441742F0E2}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ComponentModel.Primitives.dll"/>
+    <ROW Component="System.ComponentModel.TypeConverter.dll" ComponentId="{E4F5693D-89A8-4E87-B971-FC0A293301DE}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ComponentModel.TypeConverter.dll"/>
+    <ROW Component="System.ComponentModel.dll" ComponentId="{623BDCA3-B854-4C3F-BA35-F47870A499D8}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ComponentModel.dll"/>
+    <ROW Component="System.Configuration.ConfigurationManager.dll" ComponentId="{B264546F-A77E-4D9B-890A-468E4666A2F2}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Configuration.ConfigurationManager.dll"/>
+    <ROW Component="System.Console.dll" ComponentId="{E03C4D56-A3CD-4B4D-9778-D3F2C2C48D77}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Console.dll"/>
+    <ROW Component="System.Data.Common.dll" ComponentId="{65D5D37F-0DF6-4D1B-B2F0-BF474505D911}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Data.Common.dll"/>
+    <ROW Component="System.Diagnostics.DiagnosticSource.dll" ComponentId="{21A2016F-F1AC-40F4-91ED-AE1AD8194725}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.DiagnosticSource.dll"/>
+    <ROW Component="System.Diagnostics.EventLog.dll" ComponentId="{DE3E1516-2535-4058-AEB6-DC7F67F8BA4C}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Diagnostics.EventLog.dll"/>
+    <ROW Component="System.Diagnostics.Process.dll" ComponentId="{BB35ED87-FB84-4A2D-9D46-E06E52DDD416}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.Process.dll"/>
+    <ROW Component="System.Diagnostics.StackTrace.dll" ComponentId="{D067ED4D-E26F-4A06-8E7F-D5EF7B4B187E}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.StackTrace.dll"/>
+    <ROW Component="System.Diagnostics.TextWriterTraceListener.dll" ComponentId="{A3F57693-EB1F-4196-BED8-3378DBC213EA}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.TextWriterTraceListener.dll"/>
+    <ROW Component="System.Diagnostics.TraceSource.dll" ComponentId="{6E04E41E-77C7-40ED-9394-D17FC8E4A54B}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Diagnostics.TraceSource.dll"/>
+    <ROW Component="System.Drawing.Primitives.dll" ComponentId="{2FA389CF-EAC3-4BD8-80BA-CFF6795C8361}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Drawing.Primitives.dll"/>
+    <ROW Component="System.Drawing.dll" ComponentId="{91B2BFA8-AE56-405B-BBEF-720B5E95C95D}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Drawing.dll"/>
+    <ROW Component="System.Formats.Asn1.dll" ComponentId="{76F2220B-C784-4252-A43F-CD95A7A5B01F}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Formats.Asn1.dll"/>
+    <ROW Component="System.IO.Compression.Brotli.dll" ComponentId="{BC9ADE68-E6FF-4576-80E7-F593D0B4FC9A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.Compression.Brotli.dll"/>
+    <ROW Component="System.IO.Compression.Native.dll" ComponentId="{528BACBA-9990-4A5C-B520-FF577644C903}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.Compression.Native.dll"/>
+    <ROW Component="System.IO.Compression.dll" ComponentId="{5DB185F2-61C4-497D-89B9-64A3E8FF8B84}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.Compression.dll"/>
+    <ROW Component="System.IO.FileSystem.Watcher.dll" ComponentId="{FFD87299-4CCA-4588-A477-FAEA6A06FD96}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.FileSystem.Watcher.dll"/>
+    <ROW Component="System.IO.MemoryMappedFiles.dll" ComponentId="{AF20BB27-162B-4200-B452-792B27B01A45}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.IO.MemoryMappedFiles.dll"/>
+    <ROW Component="System.Linq.Expressions.dll" ComponentId="{B125FF85-89FF-460A-9EBC-AF55520882EB}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Linq.Expressions.dll"/>
+    <ROW Component="System.Linq.dll" ComponentId="{2E555D8B-ED13-4A07-888F-F98DFEE8DBC8}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Linq.dll"/>
+    <ROW Component="System.Memory.dll" ComponentId="{CED8E140-5ABA-4628-B253-73F5B127AD3A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Memory.dll"/>
+    <ROW Component="System.Net.Http.dll" ComponentId="{307247D0-260B-4296-842C-5A21CAA8AAD3}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Http.dll"/>
+    <ROW Component="System.Net.NameResolution.dll" ComponentId="{44F91B73-4CA4-4F5E-B1EB-D3050BBEB50D}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.NameResolution.dll"/>
+    <ROW Component="System.Net.NetworkInformation.dll" ComponentId="{7CECC492-DB6C-4E32-A332-3164ADB7612D}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.NetworkInformation.dll"/>
+    <ROW Component="System.Net.Primitives.dll" ComponentId="{622D08F9-47A0-471C-9D72-CD7BBAA19231}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Primitives.dll"/>
+    <ROW Component="System.Net.Quic.dll" ComponentId="{00C930FE-6947-41D2-A241-7312462B6BB7}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Quic.dll"/>
+    <ROW Component="System.Net.Requests.dll" ComponentId="{D11E69EB-31DC-4468-AB3D-57C5A6D3D91D}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Requests.dll"/>
+    <ROW Component="System.Net.Security.dll" ComponentId="{0CBA8F8B-27C5-42C6-8EE0-EBB72AC513C4}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Security.dll"/>
+    <ROW Component="System.Net.ServicePoint.dll" ComponentId="{48C79FBC-9C27-4567-A65C-E992876F831A}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.ServicePoint.dll"/>
+    <ROW Component="System.Net.Sockets.dll" ComponentId="{ED4578EF-240F-42A0-BA43-C04B07E81212}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.Sockets.dll"/>
+    <ROW Component="System.Net.WebClient.dll" ComponentId="{F856BE79-112C-45DA-947A-7558E26DA247}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.WebClient.dll"/>
+    <ROW Component="System.Net.WebHeaderCollection.dll" ComponentId="{51FF6353-7748-42E9-8EB1-0B4B6A1F03F4}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Net.WebHeaderCollection.dll"/>
+    <ROW Component="System.ObjectModel.dll" ComponentId="{C941674A-5CDE-47C1-82B2-2AA85B0C135F}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.ObjectModel.dll"/>
+    <ROW Component="System.Private.CoreLib.dll" ComponentId="{7B0606FC-AD0B-4D65-A3E6-2BC4F5E226BC}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.CoreLib.dll"/>
+    <ROW Component="System.Private.Uri.dll" ComponentId="{4552C589-0AD3-4497-A577-7D3517F7AB92}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.Uri.dll"/>
+    <ROW Component="System.Private.Xml.Linq.dll" ComponentId="{C16C259D-62A2-4EF1-A576-1F39174C31B0}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.Xml.Linq.dll"/>
+    <ROW Component="System.Private.Xml.dll" ComponentId="{AA127EB2-887D-406A-8782-F56D6AEA0EB1}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Private.Xml.dll"/>
+    <ROW Component="System.Reflection.Emit.ILGeneration.dll" ComponentId="{94695761-0A8A-40A1-846C-27FAB4236BB3}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Reflection.Emit.ILGeneration.dll"/>
+    <ROW Component="System.Reflection.Emit.Lightweight.dll" ComponentId="{D77C689C-B8F9-4CA7-AAF6-D9C4BF6FF65F}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Reflection.Emit.Lightweight.dll"/>
+    <ROW Component="System.Reflection.Metadata.dll" ComponentId="{B7D9B1F8-61AF-4C12-8E7F-2C557B7F07CC}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Reflection.Metadata.dll"/>
+    <ROW Component="System.Reflection.Primitives.dll" ComponentId="{B950580D-231D-415E-81A3-F2ECB05BEED1}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Reflection.Primitives.dll"/>
+    <ROW Component="System.Runtime.InteropServices.dll" ComponentId="{F6BDB76D-FA25-4EA3-926C-15485DD91445}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.InteropServices.dll"/>
+    <ROW Component="System.Runtime.Numerics.dll" ComponentId="{7764E328-E07A-47DD-8C0D-3FE0708C3FCF}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.Numerics.dll"/>
+    <ROW Component="System.Runtime.Serialization.Formatters.dll" ComponentId="{0703155F-29E3-4A36-87A9-F25C19771834}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.Serialization.Formatters.dll"/>
+    <ROW Component="System.Runtime.Serialization.Primitives.dll" ComponentId="{D4A7B4AF-728A-4274-999E-67BBD105B8C8}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Runtime.Serialization.Primitives.dll"/>
+    <ROW Component="System.Runtime.dll" ComponentId="{7FD32696-D7D7-4490-A056-A1FE249EF624}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Runtime.dll"/>
+    <ROW Component="System.Security.Claims.dll" ComponentId="{E7AEC008-007B-4A08-90CA-AF8189B7C14E}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Security.Claims.dll"/>
+    <ROW Component="System.Security.Cryptography.ProtectedData.dll" ComponentId="{384DC2AE-1625-488B-8AFF-9704A4DE6623}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Security.Cryptography.ProtectedData.dll"/>
+    <ROW Component="System.Security.Cryptography.dll" ComponentId="{39FB6645-BC50-4016-82A0-8D0F805EEADD}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Security.Cryptography.dll"/>
+    <ROW Component="System.Security.Principal.Windows.dll" ComponentId="{91FE1595-0B86-4111-A13D-ECDF9BC71DF9}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Security.Principal.Windows.dll"/>
+    <ROW Component="System.Text.Encoding.Extensions.dll" ComponentId="{0D5AD175-9C75-400C-A254-657D76EBE5BE}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Text.Encoding.Extensions.dll"/>
+    <ROW Component="System.Text.Encodings.Web.dll" ComponentId="{7F16F7B7-6A98-4223-AF5C-6EA9CFAC8F7E}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Text.Encodings.Web.dll"/>
+    <ROW Component="System.Text.Json.dll" ComponentId="{4F10730D-9FBF-4332-B756-A181EBBB8D10}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Text.Json.dll"/>
+    <ROW Component="System.Text.RegularExpressions.dll" ComponentId="{EF737B37-2A4E-4B67-BD6C-0F4E99D5B6DB}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Text.RegularExpressions.dll"/>
+    <ROW Component="System.Threading.Channels.dll" ComponentId="{2A7FF516-FF72-4FF1-B798-AA541B633DBE}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Threading.Channels.dll"/>
+    <ROW Component="System.Threading.Thread.dll" ComponentId="{001CB1B1-C5CA-4AE2-90A2-F2B7B2F17557}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Threading.Thread.dll"/>
+    <ROW Component="System.Threading.dll" ComponentId="{363557A0-DA52-4C93-AA08-742A4F5B4978}" Directory_="RandList_Dir" Attributes="256" KeyPath="System.Threading.dll"/>
+    <ROW Component="System.Xml.Linq.dll" ComponentId="{5984738A-98AF-4CC2-BE7D-C7D1F442EB1D}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.Linq.dll"/>
+    <ROW Component="System.Xml.ReaderWriter.dll" ComponentId="{1408B8EC-E870-4C23-BA79-6C2A514303B4}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.ReaderWriter.dll"/>
+    <ROW Component="System.Xml.XDocument.dll" ComponentId="{575081E2-9F26-4EA0-9722-474DDDE9492E}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.XDocument.dll"/>
+    <ROW Component="System.Xml.XmlSerializer.dll" ComponentId="{D8C1F554-8272-42C5-8E24-2B88F9A2341D}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.Xml.XmlSerializer.dll"/>
+    <ROW Component="System.dll" ComponentId="{CAFFFF2E-DF40-4018-8A5A-85FDAC82A690}" Directory_="RandList_Dir" Attributes="0" KeyPath="System.dll"/>
+    <ROW Component="WinRT.Runtime.dll" ComponentId="{5EA5DDB8-A7B2-4545-A1F6-57C66D347FBC}" Directory_="RandList_Dir" Attributes="0" KeyPath="WinRT.Runtime.dll"/>
+    <ROW Component="WinUIEdit.dll" ComponentId="{EBF79F90-411C-4B84-BC1F-DAED3BA2C698}" Directory_="RandList_Dir" Attributes="256" KeyPath="WinUIEdit.dll"/>
+    <ROW Component="WinUIEx.dll" ComponentId="{2AD4718C-9AF0-43F5-B4F9-23F0214AADB1}" Directory_="RandList_Dir" Attributes="0" KeyPath="WinUIEx.dll"/>
+    <ROW Component="WindowsAppSdk.AppxDeploymentExtensions.Desktop.dll" ComponentId="{8F982559-BDC8-4DDF-A4DF-4F425349E564}" Directory_="RandList_Dir" Attributes="256" KeyPath="WindowsAppSdk.AppxDeploymentExtensions.Desktop.dll"/>
+    <ROW Component="WindowsAppSdk.AppxDeploymentExtensions.DesktopEventLogInstrumentation.dl" ComponentId="{B45D817E-CEE9-442A-B30C-34D1D286003A}" Directory_="RandList_Dir" Attributes="256" KeyPath="WindowsAppSdk.AppxDeploymentExtensions.DesktopEventLogInstrumentation"/>
+    <ROW Component="clretwrc.dll" ComponentId="{90ED35BF-955D-438B-B2B6-DBAE5C8B4254}" Directory_="RandList_Dir" Attributes="256" KeyPath="clretwrc.dll"/>
+    <ROW Component="clrgc.dll" ComponentId="{4A1407F9-5CEC-4994-9011-B046C6CB4595}" Directory_="RandList_Dir" Attributes="256" KeyPath="clrgc.dll"/>
+    <ROW Component="clrjit.dll" ComponentId="{5C9EA0A4-FEBA-4EE8-98DD-E660163A562D}" Directory_="RandList_Dir" Attributes="256" KeyPath="clrjit.dll"/>
+    <ROW Component="coreclr.dll" ComponentId="{25A06F1B-2610-42C8-8FED-F729296F0494}" Directory_="RandList_Dir" Attributes="256" KeyPath="coreclr.dll"/>
+    <ROW Component="createdump.exe" ComponentId="{AD21B54C-A8DF-47E6-85C0-643B321E70A9}" Directory_="RandList_Dir" Attributes="256" KeyPath="createdump.exe"/>
+    <ROW Component="dcompi.dll" ComponentId="{DC384DF4-D472-4996-AC2A-772BDBFED2FA}" Directory_="RandList_Dir" Attributes="256" KeyPath="dcompi.dll"/>
+    <ROW Component="dwmcorei.dll" ComponentId="{FA29984B-DD65-4DBB-B952-E20E82EB9D94}" Directory_="RandList_Dir" Attributes="256" KeyPath="dwmcorei.dll"/>
+    <ROW Component="hostfxr.dll" ComponentId="{07309E0F-879C-4BA0-ADEE-66F55DB57A8A}" Directory_="RandList_Dir" Attributes="256" KeyPath="hostfxr.dll"/>
+    <ROW Component="hostpolicy.dll" ComponentId="{351EE9A1-05B4-45FA-9822-0634F9F8ED2A}" Directory_="RandList_Dir" Attributes="256" KeyPath="hostpolicy.dll"/>
+    <ROW Component="marshal.dll" ComponentId="{785D1D36-3482-474F-8A64-D498C751DF3D}" Directory_="RandList_Dir" Attributes="256" KeyPath="marshal.dll"/>
+    <ROW Component="mscordaccore.dll" ComponentId="{C1A527B4-5989-4F1A-9EF5-DF01005F53E3}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscordaccore.dll"/>
+    <ROW Component="mscordaccore_amd64_amd64_8.0.23.53103.dll" ComponentId="{BF723661-38C8-474D-B4AD-39C2E87C0DD0}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscordaccore_amd64_amd64_8.0.23.53103.dll"/>
+    <ROW Component="mscordbi.dll" ComponentId="{7EA43168-9F4B-4FFB-A171-270151A60801}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscordbi.dll"/>
+    <ROW Component="mscorrc.dll" ComponentId="{602D0E3B-E12B-408E-B927-F6D1BB5248D8}" Directory_="RandList_Dir" Attributes="256" KeyPath="mscorrc.dll"/>
+    <ROW Component="msquic.dll" ComponentId="{CF4A86E0-7684-4D7C-AA2C-96F0B5454B92}" Directory_="RandList_Dir" Attributes="256" KeyPath="msquic.dll"/>
+    <ROW Component="netstandard.dll" ComponentId="{46682A3A-58A4-42FE-91AF-CB414788E316}" Directory_="RandList_Dir" Attributes="0" KeyPath="netstandard.dll"/>
+    <ROW Component="wuceffectsi.dll" ComponentId="{741BAAA6-5C4E-45B7-AD3C-C5352389D29A}" Directory_="RandList_Dir" Attributes="256" KeyPath="wuceffectsi.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -355,10 +352,12 @@
     <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\Newtonsoft.Json.dll" SelfReg="false"/>
     <ROW File="PushNotificationsLongRunningTask.ProxyStub.dll" Component_="PushNotificationsLongRunningTask.ProxyStub.dll" FileName="PUSHNO~1.DLL|PushNotificationsLongRunningTask.ProxyStub.dll" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\PushNotificationsLongRunningTask.ProxyStub.dll" SelfReg="false"/>
     <ROW File="RandList.Core.dll" Component_="RandList.Core.dll" FileName="RANDLI~1.DLL|RandList.Core.dll" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.Core.dll" SelfReg="false"/>
+    <ROW File="RandList.Core.pdb" Component_="RandList.Core.dll" FileName="RANDLI~1.PDB|RandList.Core.pdb" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.Core.pdb" SelfReg="false"/>
     <ROW File="RandList.deps.json" Component_="AppWindow.ini" FileName="RANDLI~1.JSO|RandList.deps.json" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.deps.json" SelfReg="false"/>
     <ROW File="RandList.dll" Component_="RandList.dll" FileName="RandList.dll" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.dll" SelfReg="false"/>
     <ROW File="RandList.exe" Component_="RandList.exe" FileName="RandList.exe" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="RandList.runtimeconfig.json" Component_="RandList.runtimeconfig.json" FileName="RANDLI~2.JSO|RandList.runtimeconfig.json" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.runtimeconfig.json" SelfReg="false"/>
+    <ROW File="RandList.pdb" Component_="RandList.exe" FileName="RandList.pdb" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.pdb" SelfReg="false"/>
+    <ROW File="RandList.runtimeconfig.json" Component_="AppWindow.ini" FileName="RANDLI~2.JSO|RandList.runtimeconfig.json" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RandList.runtimeconfig.json" SelfReg="false"/>
     <ROW File="resources.pri" Component_="AppWindow.ini" FileName="RESOUR~1.PRI|resources.pri" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\resources.pri" SelfReg="false"/>
     <ROW File="RestartAgent.exe" Component_="RestartAgent.exe" FileName="RESTAR~1.EXE|RestartAgent.exe" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\RestartAgent.exe" SelfReg="false"/>
     <ROW File="System.Collections.Concurrent.dll" Component_="System.Collections.Concurrent.dll" FileName="SYSTEM~1.DLL|System.Collections.Concurrent.dll" Attributes="0" SourcePath="..\..\Packge\RandList\RandList\System.Collections.Concurrent.dll" SelfReg="false"/>
@@ -636,7 +635,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
-    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_AuthorSinglePackage" Type="1" Source="aicustact.dll" Target="AI_AuthorSinglePackage" WithoutSeq="true"/>
@@ -833,25 +831,23 @@
     <ROW Feature_="MainFeature" Component_="System.Text.Json.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Text.RegularExpressions.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Threading.Channels.dll"/>
+    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
+    <ROW Feature_="MainFeature" Component_="AI_INSTALLPERUSER"/>
     <ROW Feature_="MainFeature" Component_="System.Threading.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Threading.Thread.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Xml.Linq.dll"/>
     <ROW Feature_="MainFeature" Component_="System.Xml.ReaderWriter.dll"/>
+    <ROW Feature_="MainFeature" Component_="ProductName"/>
+    <ROW Feature_="MainFeature" Component_="Manufacturer"/>
     <ROW Feature_="MainFeature" Component_="System.Xml.XDocument.dll"/>
-    <ROW Feature_="MainFeature" Component_="AI_ExePath"/>
-    <ROW Feature_="MainFeature" Component_="AI_INSTALLPERUSER"/>
     <ROW Feature_="MainFeature" Component_="System.Xml.XmlSerializer.dll"/>
     <ROW Feature_="MainFeature" Component_="WindowsAppSdk.AppxDeploymentExtensions.DesktopEventLogInstrumentation.dl"/>
     <ROW Feature_="MainFeature" Component_="WindowsAppSdk.AppxDeploymentExtensions.Desktop.dll"/>
     <ROW Feature_="MainFeature" Component_="WinRT.Runtime.dll"/>
-    <ROW Feature_="MainFeature" Component_="ProductName"/>
-    <ROW Feature_="MainFeature" Component_="Manufacturer"/>
     <ROW Feature_="MainFeature" Component_="WinUIEdit.dll"/>
     <ROW Feature_="MainFeature" Component_="WinUIEx.dll"/>
     <ROW Feature_="MainFeature" Component_="wuceffectsi.dll"/>
     <ROW Feature_="MainFeature" Component_="Microsoft.ui.xaml.dll.mui_1"/>
-    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
-    <ROW Feature_="MainFeature" Component_="RandList.runtimeconfig.json"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="WindowIcon.exe" SourcePath="RandList\Assets\WindowIcon.ico" Index="0"/>
@@ -921,8 +917,8 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="ProductName" Directory_="SHORTCUTDIR" Name="[|ProductName]" Component_="RandList.exe" Target="[#RandList.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="RandList_Dir"/>
-    <ROW Shortcut="ProductName1" Directory_="SHORTCUTDIR" Name="RANDLI~1|[|ProductName] (1)" Component_="RandList.exe" Target="[#RandList.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="DesktopFolder"/>
+    <ROW Shortcut="ProductName" Directory_="ProgramMenuFolder" Name="[|ProductName]" Component_="RandList.exe" Target="[#RandList.exe]" Hotkey="0" Icon_="WindowIcon.exe" IconIndex="0" ShowCmd="1" WkDir="RandList_Dir"/>
+    <ROW Shortcut="ProductName1" Directory_="DesktopFolder" Name="RANDLI~1|[|ProductName] (1)" Component_="RandList.exe" Target="[#RandList.exe]" Hotkey="0" Icon_="WindowIcon.exe" IconIndex="0" ShowCmd="1" WkDir="RandList_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
