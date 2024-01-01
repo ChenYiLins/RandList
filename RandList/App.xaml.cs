@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using IniParser;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.UI.Xaml;
 
@@ -36,6 +37,8 @@ public partial class App : Application
 
         return service;
     }
+
+    private static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory; // 获取程序运行路径
 
     public static WindowEx MainWindow { get; } = new MainWindow();
 
@@ -91,5 +94,13 @@ public partial class App : Application
         base.OnLaunched(args);
 
         await App.GetService<IActivationService>().ActivateAsync(args);
+
+        if (File.Exists(PathApp + "AppWindow.ini"))
+        {
+            var parser = new FileIniDataParser();
+            var iniFile = parser.ReadFile(PathApp + "AppWindow.ini");
+
+            if (iniFile["AppWindow"]["PositionX"] == "") MainWindow.CenterOnScreen();
+        }
     }
 }
