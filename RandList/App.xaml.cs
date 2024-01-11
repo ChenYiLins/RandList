@@ -1,7 +1,5 @@
-﻿using IniParser;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 
 using RandList.Activation;
@@ -12,7 +10,6 @@ using RandList.Models;
 using RandList.Services;
 using RandList.ViewModels;
 using RandList.Views;
-using Windows.UI.WindowManagement;
 
 namespace RandList;
 
