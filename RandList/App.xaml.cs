@@ -1,6 +1,7 @@
 ﻿using IniParser;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 
 using RandList.Activation;
@@ -11,6 +12,7 @@ using RandList.Models;
 using RandList.Services;
 using RandList.ViewModels;
 using RandList.Views;
+using Windows.UI.WindowManagement;
 
 namespace RandList;
 
@@ -94,13 +96,5 @@ public partial class App : Application
         base.OnLaunched(args);
 
         await App.GetService<IActivationService>().ActivateAsync(args);
-
-        if (File.Exists(PathApp + "AppWindow.ini"))
-        {
-            var parser = new FileIniDataParser();
-            var iniFile = parser.ReadFile(PathApp + "AppWindow.ini");
-
-            if (iniFile["AppWindow"]["PositionX"] == "") MainWindow.CenterOnScreen();
-        }
     }
 }

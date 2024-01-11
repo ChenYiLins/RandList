@@ -38,7 +38,7 @@ public sealed partial class MainWindow : WindowEx
             var parser = new FileIniDataParser();
             var iniFile = parser.ReadFile(PathApp + "AppWindow.ini");
 
-            if (iniFile["AppWindow"]["PositionX"] != "")
+            if (iniFile["AppWindow"]["FirstLaunch"] != "")
             {
                 var rect = new RectInt32
                 {
@@ -48,6 +48,14 @@ public sealed partial class MainWindow : WindowEx
                     Height = Convert.ToInt32(iniFile["AppWindow"]["SizeHeight"])
                 };
                 AppWindow.MoveAndResize(rect);
+
+                iniFile["AppWindow"]["FirstLaunch"] = "false";
+                parser.WriteFile(PathApp + "AppWindow.ini", iniFile);
+            }
+            else
+            {
+                AppWindow.Resize(new SizeInt32 ( 700, 950 ));
+                WindowExtensions.CenterOnScreen(this);
             }
 
         }
