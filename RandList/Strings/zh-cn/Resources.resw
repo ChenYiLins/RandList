@@ -191,41 +191,68 @@
   </data>
   <data name="MenuItem_Edit_Symbol_Newline.Text" xml:space="preserve">
     <value>换行符</value>
+    <comment />
   </data>
   <data name="MenuItem_Edit_Symbol_Space.Text" xml:space="preserve">
     <value>空格</value>
+    <comment />
   </data>
   <data name="MenuItem_Edit_Symbol.Text" xml:space="preserve">
     <value>分割符号</value>
+    <comment />
   </data>
   <data name="MenuItem_About_About.Text" xml:space="preserve">
     <value>关于</value>
+    <comment />
   </data>
   <data name="MenuItem_About_Theme.Text" xml:space="preserve">
     <value>主题</value>
+    <comment />
   </data>
   <data name="MenuItem_Edit_Mode.Text" xml:space="preserve">
     <value>模式</value>
+    <comment />
   </data>
   <data name="MenuItem_File_List.Text" xml:space="preserve">
     <value>名单</value>
+    <comment />
+  </data>
+  <data name="MenuItem_File_Import.Text" xml:space="preserve">
+    <value>导入</value>
+    <comment />
   </data>
   <data name="MenuItem_About_Theme_Dark.Text" xml:space="preserve">
     <value>深色</value>
+    <comment />
   </data>
   <data name="MenuItem_About_Theme_Default.Text" xml:space="preserve">
     <value>默认</value>
+    <comment />
   </data>
   <data name="MenuItem_About_Theme_Light.Text" xml:space="preserve">
     <value>浅色</value>
+    <comment />
   </data>
   <data name="MenuItem_Edit_Mode_Random.Text" xml:space="preserve">
     <value>随机起点顺序</value>
+    <comment />
   </data>
   <data name="MenuItem_Edit_Mode_Fixed.Text" xml:space="preserve">
     <value>固定起点顺序</value>
+    <comment />
   </data>
   <data name="MenuItem_Generate_Start.Text" xml:space="preserve">
     <value>生成</value>
+    <comment />
+  </data>
+  <data name="MainPage_TeachingTip_Warning.Title" xml:space="preserve">
+    <value>警告！</value>
+    <comment />
+  </data>
+  <data name="WarningWords_LoadOver" xml:space="preserve">
+    <value>载入名单成功！</value>
+  </data>
+  <data name="WarningWords_DuplicateSections" xml:space="preserve">
+    <value>重复的名单名字！请手动编辑名单！</value>
   </data>
 </root>

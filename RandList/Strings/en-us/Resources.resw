@@ -210,6 +210,9 @@
   <data name="MenuItem_File_List.Text" xml:space="preserve">
     <value>List</value>
   </data>
+  <data name="MenuItem_File_Import.Text" xml:space="preserve">
+    <value>Import</value>
+  </data>
   <data name="MenuItem_About_Theme_Dark.Text" xml:space="preserve">
     <value>Dark</value>
   </data>
@@ -227,5 +230,14 @@
   </data>
   <data name="MenuItem_Generate_Start.Text" xml:space="preserve">
     <value>Generate</value>
+  </data>
+  <data name="MainPage_TeachingTip_Warning.Title" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="WarningWords_LoadOver" xml:space="preserve">
+    <value>Loaded new List!</value>
+  </data>
+  <data name="WarningWords_DuplicateSections" xml:space="preserve">
+    <value>Duplicate list name! Please edit the list!</value>
   </data>
 </root>
