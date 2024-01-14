@@ -21,6 +21,7 @@ public sealed partial class MainWindow : WindowEx
     {
         InitializeComponent();
 
+        // 设置标题栏相关内容
         AppWindow.SetIcon(Path.Combine(AppContext.BaseDirectory, "Assets/WindowIcon.ico"));
         AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
         AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
@@ -48,14 +49,13 @@ public sealed partial class MainWindow : WindowEx
                     Height = Convert.ToInt32(iniFile["AppWindow"]["SizeHeight"])
                 };
                 AppWindow.MoveAndResize(rect);
-
-                iniFile["AppWindow"]["FirstLaunch"] = "false";
-                parser.WriteFile(PathApp + "AppWindow.ini", iniFile);
             }
             else
             {
                 AppWindow.Resize(new SizeInt32 ( 700, 950 ));
                 WindowExtensions.CenterOnScreen(this);
+                iniFile["AppWindow"]["FirstLaunch"] = "false";
+                parser.WriteFile(PathApp + "AppWindow.ini", iniFile);
             }
 
         }
