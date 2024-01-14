@@ -1,8 +1,12 @@
 ﻿using System.Reflection;
+using System.Text;
 using IniParser;
+using IniParser.Exceptions;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using RandList.Helpers;
 using RandList.ViewModels;
+using Windows.ApplicationModel;
 
 namespace RandList.Views;
 
@@ -24,39 +28,46 @@ public sealed partial class MainPage : Page
         // 获取"List.ini"内所有名单，并加入到子菜单之中
         if (File.Exists(PathApp + "List.ini"))
         {
-            var parser = new FileIniDataParser();
-            var iniFile = parser.ReadFile(PathApp + "List.ini");
-
-            for (var i = 0; i < iniFile.Sections.Count; i++)
-            {
-                var item = new RadioMenuFlyoutItem
-                {
-                    Text = iniFile.Sections.ElementAt(i).SectionName,
-                    GroupName = "List",
-                    IsChecked = i == 0
-                };
-                FileListMenuItem.Items.Add(item);
-            }
+            LoadIniFile();
         }
         else
         {
-            ShowWarning("WarningWords_NoList");
+            ShowWarning("WarningWords_NoList", FileMenuBar);
             GenerateStartMenuItem.IsEnabled = false;
         }
     }
 
-    private async void MenuItem_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+    private async void MenuItem_Click(object sender, RoutedEventArgs e)
     {
         var selectedFlyoutItem = sender as MenuFlyoutItem;
         if (selectedFlyoutItem == GenerateStartMenuItem)
         {
             MainPageGenerateDialogOfTextBox.Text = "";
-            await MainPageGenerateDialog.ShowAsync();
+            await GenerateDialog.ShowAsync();
         }
         else if (selectedFlyoutItem == AboutAboutMenuItem)
         {
-            MainPageAboutDialogOfTextBox.Text = ResourceExtensions.GetLocalized("MainPage_Dialog_About_TextBlock") + GetVersionDescription();
-            await MainPageAboutDialog.ShowAsync();
+            MainPageAboutDialogOfTextBox.Text = "MainPage_Dialog_About_TextBlock".GetLocalized() + GetVersionDescription();
+            await AboutDialog.ShowAsync();
+        }
+        else if (selectedFlyoutItem == FileImportMenuItem)
+        {
+            var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+            openPicker.FileTypeFilter.Add(".ini");
+            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow));
+            var file = await openPicker.PickSingleFileAsync();
+            if (file != null)
+            {
+                var listFileStr = File.ReadAllText(PathApp + "List.ini") + "\n" + File.ReadAllText(file.Path);
+                File.WriteAllText(PathApp + "List.ini", listFileStr, Encoding.UTF8);
+                if (File.Exists(PathApp + "List.ini"))
+                {
+                    FileListMenuItem.Items.Clear();
+                    LoadIniFile();
+                    ShowWarning("WarningWords_LoadOver", FileMenuBar);
+                }
+            }
+
         }
     }
 
@@ -72,13 +83,13 @@ public sealed partial class MainPage : Page
         // 没有填写生成数量
         if (MainPageGenerateDialogOfTextBox.Text == "")
         {
-            ShowWarning("WarningWords_NoGenerateNum");
+            ShowWarning("WarningWords_NoGenerateNum", GenerateMenuBar);
             return;
         }
         // 生成数量超出名单数
         else if (Convert.ToInt32(MainPageGenerateDialogOfTextBox.Text) > Convert.ToInt32(iniFile[selectedItem.Text]["NUM"]))
         {
-            ShowWarning("WarningWords_BiggerGenerateNum");
+            ShowWarning("WarningWords_BiggerGenerateNum", GenerateMenuBar);
             return;
         }
 
@@ -140,16 +151,58 @@ public sealed partial class MainPage : Page
         }
     }
 
-
-    private void ShowWarning(string warningKey)
+    private void LoadIniFile()
     {
-        MainPageTextBlock.Text = ResourceExtensions.GetLocalized(warningKey);
+        var parser = new FileIniDataParser();
+        try
+        {
+            var iniFile = parser.ReadFile(PathApp + "List.ini");
+
+            for (var i = 0; i < iniFile.Sections.Count; i++)
+            {
+                var item = new RadioMenuFlyoutItem
+                {
+                    Text = iniFile.Sections.ElementAt(i).SectionName,
+                    GroupName = "List",
+                    IsChecked = i == 0
+                };
+                FileListMenuItem.Items.Add(item);
+            }
+        }
+        catch (ParsingException ex)
+        {
+            switch (ex.HResult)
+            {
+                case -2146233088:
+                    ShowWarning("WarningWords_DuplicateSections", FileMenuBar);
+                    break;
+            }
+        }
+
+    }
+
+    private void ShowWarning(string warningKey, FrameworkElement frameworkElement)
+    {
+        //MainPageTextBlock.Text = warningKey.GetLocalized();
+        WarningTeachingTip.Subtitle = warningKey.GetLocalized();
+        WarningTeachingTip.Target = frameworkElement;
+        WarningTeachingTip.IsOpen = true;
     }
 
     private static string GetVersionDescription()
     {
         Version version;
-        version = Assembly.GetExecutingAssembly().GetName().Version!;
+
+        if (RuntimeHelper.IsMSIX)
+        {
+            var packageVersion = Package.Current.Id.Version;
+
+            version = new(packageVersion.Major, packageVersion.Minor, packageVersion.Build, packageVersion.Revision);
+        }
+        else
+        {
+            version = Assembly.GetExecutingAssembly().GetName().Version!;
+        }
 
         return $"{version.Major}.{version.Minor}.{version.Build}";
     }

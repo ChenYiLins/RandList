@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:helpers="using:RandList.Helpers"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI"
     xmlns:xaml="using:Microsoft.UI.Xaml"
     mc:Ignorable="d">
     <Page.Resources>
@@ -42,8 +43,12 @@
 
         <Grid Grid.Row="1" VerticalAlignment="Top">
             <MenuBar>
-                <MenuBarItem x:Uid="MenuBar_File">
+                <MenuBarItem x:Name="FileMenuBar" x:Uid="MenuBar_File">
                     <MenuFlyoutSubItem x:Name="FileListMenuItem" x:Uid="MenuItem_File_List" />
+                    <MenuFlyoutItem
+                        x:Name="FileImportMenuItem"
+                        x:Uid="MenuItem_File_Import"
+                        Click="MenuItem_Click" />
                 </MenuBarItem>
 
                 <MenuBarItem x:Uid="MenuBar_Edit">
@@ -51,31 +56,55 @@
                         <RadioMenuFlyoutItem
                             x:Name="EditModeRandomRadioMenuItem"
                             x:Uid="MenuItem_Edit_Mode_Random"
+                            Command="{x:Bind ViewModel.SwitchEditCommand}"
                             GroupName="Edit_Mode"
-                            IsChecked="True" />
-                        <!--  模式1：随机起点顺序  -->
+                            IsChecked="{x:Bind ViewModel.Mode, Converter={StaticResource StringEqualsConverter}, ConverterParameter=Random, Mode=OneWay}">
+                            <MenuFlyoutItem.CommandParameter>
+                                <x:String>Mode_Random</x:String>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+                        <!--  随机起点顺序  -->
+
                         <RadioMenuFlyoutItem
                             x:Name="EditModeFixedRadioMenuItem"
                             x:Uid="MenuItem_Edit_Mode_Fixed"
-                            GroupName="Edit_Mode" />
-                        <!--  模式2：固定起点顺序  -->
+                            Command="{x:Bind ViewModel.SwitchEditCommand}"
+                            GroupName="Edit_Mode"
+                            IsChecked="{x:Bind ViewModel.Mode, Converter={StaticResource StringEqualsConverter}, ConverterParameter=Fixed, Mode=OneWay}">
+                            <MenuFlyoutItem.CommandParameter>
+                                <x:String>Mode_Fixed</x:String>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+                        <!--  固定起点顺序  -->
                     </MenuFlyoutSubItem>
+
                     <MenuFlyoutSubItem x:Uid="MenuItem_Edit_Symbol">
                         <RadioMenuFlyoutItem
                             x:Name="EditSymbolSpaceRadioMenuItem"
                             x:Uid="MenuItem_Edit_Symbol_Space"
+                            Command="{x:Bind ViewModel.SwitchEditCommand}"
                             GroupName="Edit_Symbol"
-                            IsChecked="True" />
-                        <!--  符号1：空格  -->
+                            IsChecked="{x:Bind ViewModel.Symbol, Converter={StaticResource StringEqualsConverter}, ConverterParameter=Space, Mode=OneWay}">
+                            <MenuFlyoutItem.CommandParameter>
+                                <x:String>Symbol_Space</x:String>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+                        <!--  空格  -->
                         <RadioMenuFlyoutItem
                             x:Name="EditSymbolNewlineRadioMenuItem"
                             x:Uid="MenuItem_Edit_Symbol_Newline"
-                            GroupName="Edit_Symbol" />
-                        <!--  符号2：换行符  -->
+                            Command="{x:Bind ViewModel.SwitchEditCommand}"
+                            GroupName="Edit_Symbol"
+                            IsChecked="{x:Bind ViewModel.Symbol, Converter={StaticResource StringEqualsConverter}, ConverterParameter=Newline, Mode=OneWay}">
+                            <MenuFlyoutItem.CommandParameter>
+                                <x:String>Symbol_Newline</x:String>
+                            </MenuFlyoutItem.CommandParameter>
+                        </RadioMenuFlyoutItem>
+                        <!--  换行符  -->
                     </MenuFlyoutSubItem>
                 </MenuBarItem>
 
-                <MenuBarItem x:Uid="MenuBar_Generate">
+                <MenuBarItem x:Name="GenerateMenuBar" x:Uid="MenuBar_Generate">
                     <MenuFlyoutItem
                         x:Name="GenerateStartMenuItem"
                         x:Uid="MenuItem_Generate_Start"
@@ -149,15 +178,20 @@
         </Grid>
 
         <ContentDialog
-            x:Name="MainPageGenerateDialog"
+            x:Name="GenerateDialog"
             x:Uid="MainPage_Dialog_Generate"
             DefaultButton="Primary"
             PrimaryButtonClick="MainPageGenerateDialog_PrimaryButtonClick">
-            <TextBox x:Name="MainPageGenerateDialogOfTextBox" x:Uid="MainPage_Dialog_Generate_TextBox" />
+            <TextBox
+                x:Name="MainPageGenerateDialogOfTextBox"
+                x:Uid="MainPage_Dialog_Generate_TextBox"
+                ui:TextBoxExtensions.ValidationMode="Dynamic"
+                ui:TextBoxExtensions.ValidationType="Number"
+                InputScope="Number" />
         </ContentDialog>
 
         <ContentDialog
-            x:Name="MainPageAboutDialog"
+            x:Name="AboutDialog"
             x:Uid="MainPage_Dialog_About"
             DefaultButton="Close">
             <StackPanel Orientation="Horizontal">
@@ -170,6 +204,12 @@
                 <HyperlinkButton Content="GitHub" NavigateUri="https://github.com/ChenYiLins/RandList" />
             </StackPanel>
         </ContentDialog>
+
+        <TeachingTip x:Name="WarningTeachingTip" x:Uid="MainPage_TeachingTip_Warning">
+            <TeachingTip.IconSource>
+                <FontIconSource Glyph="&#xE7BA;" />
+            </TeachingTip.IconSource>
+        </TeachingTip>
 
         <Grid
             Grid.Row="2"

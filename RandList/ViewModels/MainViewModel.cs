@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.Globalization;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -20,12 +18,23 @@ public partial class MainViewModel : ObservableRecipient
     private ElementTheme _elementTheme;
 
     [ObservableProperty]
-    private string _Language;
+    private string _mode;
+
+    [ObservableProperty]
+    private string _symbol;
+
+    [ObservableProperty]
+    private string _language;
 
     [ObservableProperty]
     private string _versionDescription;
 
     public ICommand SwitchThemeCommand
+    {
+        get;
+    }
+
+    public ICommand SwitchEditCommand
     {
         get;
     }
@@ -39,7 +48,32 @@ public partial class MainViewModel : ObservableRecipient
     {
         _themeSelectorService = themeSelectorService;
         _elementTheme = _themeSelectorService.Theme;
-        _Language = "zh-cn";
+
+        var PathApp = AppDomain.CurrentDomain.BaseDirectory;
+        if (File.Exists(PathApp + "AppWindow.ini"))
+        {
+            var parser = new FileIniDataParser();
+            var iniFile = parser.ReadFile(PathApp + "AppWindow.ini");
+            _mode = iniFile["AppWindow"]["Mode"];
+            _symbol = iniFile["AppWindow"]["Symbol"];
+        }
+        else
+        {
+            _mode = "null";
+            _symbol = "null";
+        }
+
+        // TODO: If someday Microsoft fix the program that unpackaged can't use PrimaryLanguageOverride.
+        // https://github.com/microsoft/WindowsAppSDK/issues/1687
+        if (RuntimeHelper.IsMSIX)
+        {
+            _language = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
+        }
+        else
+        {
+            _language = "zh-cn";
+        }
+
         _versionDescription = GetVersionDescription();
 
         SwitchThemeCommand = new RelayCommand<ElementTheme>(
@@ -52,12 +86,37 @@ public partial class MainViewModel : ObservableRecipient
                 }
             });
 
+        SwitchEditCommand = new RelayCommand<string>(
+            (param) =>
+            {
+                if (param != null)
+                {
+                    var word = param.Split('_');
+                    var PathApp = AppDomain.CurrentDomain.BaseDirectory;
+                    if (File.Exists(PathApp + "AppWindow.ini"))
+                    {
+                        var parser = new FileIniDataParser();
+                        var iniFile = parser.ReadFile(PathApp + "AppWindow.ini");
+
+                        iniFile["AppWindow"][word[0]] = word[1];
+                        parser.WriteFile(PathApp + "AppWindow.ini", iniFile);
+                    }
+                }
+            });
+
         SwitchLanguageCommand = new RelayCommand<string>(
             (param) =>
             {
                 if (param != null)
                 {
-                    
+                    if (RuntimeHelper.IsMSIX)
+                    {
+                        Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = param;
+                    }
+                    else
+                    {
+
+                    }
                 }
             });
     }
