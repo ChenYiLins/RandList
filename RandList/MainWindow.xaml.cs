@@ -52,7 +52,7 @@ public sealed partial class MainWindow : WindowEx
             }
             else
             {
-                AppWindow.Resize(new SizeInt32 ( 700, 950 ));
+                AppWindow.Resize(new SizeInt32(700, 950));
                 WindowExtensions.CenterOnScreen(this);
                 iniFile["AppWindow"]["FirstLaunch"] = "false";
                 parser.WriteFile(PathApp + "AppWindow.ini", iniFile);
