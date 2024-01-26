@@ -1,10 +1,10 @@
-﻿{
-    "profiles": {
-      "RandList (Package)": {
-        "commandName": "MsixPackage"
-      },
-      "RandList (Unpackaged)": {
-        "commandName": "Project"
-      }
+{
+  "profiles": {
+    "RandList (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "RandList (Unpackaged)": {
+      "commandName": "Project"
     }
+  }
 }

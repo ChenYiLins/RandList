@@ -8,7 +8,7 @@
     <PackageLogoSource>D:\Project\Source\CSharp\RandList\RandList\Assets\WindowIcon.png</PackageLogoSource>
     <SplashScreenSource>D:\Project\Source\CSharp\RandList\RandList\Assets\WindowIcon.png</SplashScreenSource>
     <SmallTileSource>D:\Project\Source\CSharp\RandList\RandList\Assets\WindowIcon.png</SmallTileSource>
-    <_LastSelectedProfileId>D:\Project\Source\CSharp\RandList\RandList\Properties\PublishProfiles\win-x64.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>D:\Project\Source\CSharp\RandList\RandList\Properties\PublishProfiles\win-x86.pubxml</_LastSelectedProfileId>
     <ActiveDebugProfile>RandList (Unpackaged)</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -17,4 +17,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <ItemGroup>
+    <Page Update="Dialog\ImportDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Dialog\EditListDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
 </Project>

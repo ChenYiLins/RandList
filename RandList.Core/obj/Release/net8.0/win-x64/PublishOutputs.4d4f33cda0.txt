@@ -1,4 +1,0 @@
-D:\Project\Source\CSharp\RandList\RandList.Core\bin\Release\net8.0\win-x64\publish\RandList.Core.dll
-D:\Project\Source\CSharp\RandList\RandList.Core\bin\Release\net8.0\win-x64\publish\RandList.Core.deps.json
-D:\Project\Source\CSharp\RandList\RandList.Core\bin\Release\net8.0\win-x64\publish\RandList.Core.pdb
-D:\Project\Source\CSharp\RandList\RandList.Core\bin\Release\net8.0\win-x64\publish\Newtonsoft.Json.dll
