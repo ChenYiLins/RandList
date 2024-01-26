@@ -125,10 +125,6 @@
     <value>RandList</value>
     <comment />
   </data>
-  <data name="Main_Title.Text" xml:space="preserve">
-    <value>Main</value>
-    <comment>Page title for MainPage</comment>
-  </data>
   <data name="MainPage_Dialog_Generate.CloseButtonText" xml:space="preserve">
     <value>取消</value>
     <comment />
@@ -218,7 +214,7 @@
     <comment />
   </data>
   <data name="MenuItem_File_Import.Text" xml:space="preserve">
-    <value>导入</value>
+    <value>导入名单</value>
     <comment />
   </data>
   <data name="MenuItem_About_Theme_Dark.Text" xml:space="preserve">
@@ -250,9 +246,63 @@
     <comment />
   </data>
   <data name="WarningWords_LoadOver" xml:space="preserve">
-    <value>载入名单成功！</value>
+    <value>导入名单成功！</value>
   </data>
   <data name="WarningWords_DuplicateSections" xml:space="preserve">
     <value>重复的名单名字！请手动编辑名单！</value>
+  </data>
+  <data name="MenuItem_File_EditList.Text" xml:space="preserve">
+    <value>编辑名单</value>
+  </data>
+  <data name="EditListDialog_CommandBar_Delete.Label" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="EditListDialog_Title.Text" xml:space="preserve">
+    <value>编辑名单</value>
+  </data>
+  <data name="EditListDialog_CommandBar_Save.Label" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="EditListDialog_TeachingTip_Warning.Title" xml:space="preserve">
+    <value>警告！</value>
+  </data>
+  <data name="WarningWords_SaveSuccess" xml:space="preserve">
+    <value>保存成功</value>
+  </data>
+  <data name="EditListDialog_CommandBar_Import.Label" xml:space="preserve">
+    <value>导入</value>
+  </data>
+  <data name="WarningWords_Unsaved" xml:space="preserve">
+    <value>（未保存）</value>
+  </data>
+  <data name="WarningWords_Saved" xml:space="preserve">
+    <value>（已保存）</value>
+  </data>
+  <data name="ImportDialog.PrimaryButtonText" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="PrimaryButtonText.CloseButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ImportDialog_TextBox_ListName.PlaceholderText" xml:space="preserve">
+    <value>名单名称</value>
+  </data>
+  <data name="ImportDialog_TextBox_ListContent.PlaceholderText" xml:space="preserve">
+    <value>名单内容，可用空格（ ）、逗号（，）、分号分隔（；），不区分中英文符号</value>
+  </data>
+  <data name="ImportDialog.Title" xml:space="preserve">
+    <value>导入名单</value>
+  </data>
+  <data name="ImportDialog.CloseButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="WarningWords_InvalidContent" xml:space="preserve">
+    <value>名单内容无效！</value>
+  </data>
+  <data name="WarningWords_NoListName" xml:space="preserve">
+    <value>请输入名单名称！</value>
+  </data>
+  <data name="WarningWords_SuccessfullyImport" xml:space="preserve">
+    <value>导入成功</value>
   </data>
 </root>

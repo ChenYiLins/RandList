@@ -125,10 +125,6 @@
     <value>RandList</value>
     <comment />
   </data>
-  <data name="Main_Title.Text" xml:space="preserve">
-    <value>Main</value>
-    <comment>Page title for MainPage</comment>
-  </data>
   <data name="MainPage_Dialog_Generate.CloseButtonText" xml:space="preserve">
     <value>Cancel</value>
     <comment />
@@ -239,5 +235,59 @@
   </data>
   <data name="WarningWords_DuplicateSections" xml:space="preserve">
     <value>Duplicate list name! Please edit the list!</value>
+  </data>
+  <data name="MenuItem_File_EditList.Text" xml:space="preserve">
+    <value>Edit List</value>
+  </data>
+  <data name="EditListDialog_CommandBar_Delete.Label" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EditListDialog_Title.Text" xml:space="preserve">
+    <value>EditList</value>
+  </data>
+  <data name="EditListDialog_CommandBar_Save.Label" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="EditListDialog_TeachingTip_Warning.Title" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="WarningWords_SaveSuccess" xml:space="preserve">
+    <value>Save successful</value>
+  </data>
+  <data name="EditListDialog_CommandBar_Import.Label" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="WarningWords_Unsaved" xml:space="preserve">
+    <value>(Unsaved)</value>
+  </data>
+  <data name="WarningWords_Saved" xml:space="preserve">
+    <value>(Saved)</value>
+  </data>
+  <data name="ImportDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="PrimaryButtonText.CloseButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ImportDialog_TextBox_ListName.PlaceholderText" xml:space="preserve">
+    <value>List name</value>
+  </data>
+  <data name="ImportDialog_TextBox_ListContent.PlaceholderText" xml:space="preserve">
+    <value>The contents of the list can be separated by spaces ( ), commas (,) and semicolons (;) without distinguishing between Chinese and English symbols</value>
+  </data>
+  <data name="ImportDialog.Title" xml:space="preserve">
+    <value>Import List</value>
+  </data>
+  <data name="ImportDialog.CloseButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="WarningWords_InvalidContent" xml:space="preserve">
+    <value>The content of list is invalid!</value>
+  </data>
+  <data name="WarningWords_NoListName" xml:space="preserve">
+    <value>Please enter the name of list!</value>
+  </data>
+  <data name="WarningWords_SuccessfullyImport" xml:space="preserve">
+    <value>Import successful</value>
   </data>
 </root>
