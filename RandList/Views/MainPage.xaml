@@ -49,6 +49,10 @@
                         x:Name="FileImportMenuItem"
                         x:Uid="MenuItem_File_Import"
                         Click="MenuItem_Click" />
+                    <MenuFlyoutItem
+                        x:Name="FileEditListMenuItem"
+                        x:Uid="MenuItem_File_EditList"
+                        Click="MenuItem_Click"/>
                 </MenuBarItem>
 
                 <MenuBarItem x:Uid="MenuBar_Edit">

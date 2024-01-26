@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Text;
 using IniParser;
 using IniParser.Exceptions;
 using Microsoft.UI.Xaml;
@@ -12,7 +11,6 @@ namespace RandList.Views;
 
 public sealed partial class MainPage : Page
 {
-
     private static readonly string PathApp = AppDomain.CurrentDomain.BaseDirectory; // 获取程序运行路径
 
     public MainViewModel ViewModel
@@ -52,22 +50,23 @@ public sealed partial class MainPage : Page
         }
         else if (selectedFlyoutItem == FileImportMenuItem)
         {
-            var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
-            openPicker.FileTypeFilter.Add(".ini");
-            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow));
-            var file = await openPicker.PickSingleFileAsync();
-            if (file != null)
+            var importDialog = new Dialog.ImportDialog
             {
-                var listFileStr = File.ReadAllText(PathApp + "List.ini") + "\n" + File.ReadAllText(file.Path);
-                File.WriteAllText(PathApp + "List.ini", listFileStr, Encoding.UTF8);
-                if (File.Exists(PathApp + "List.ini"))
-                {
-                    FileListMenuItem.Items.Clear();
-                    LoadIniFile();
-                    ShowWarning("WarningWords_LoadOver", FileMenuBar);
-                }
-            }
-
+                XamlRoot = XamlRoot,
+                RequestedTheme = ViewModel.ElementTheme
+            };
+            await importDialog.ShowAsync();
+            LoadIniFile();
+        }
+        else if (selectedFlyoutItem == FileEditListMenuItem)
+        {
+            var editListDialog = new Dialog.EditListDialog
+            {
+                XamlRoot = XamlRoot,
+                RequestedTheme = ViewModel.ElementTheme
+            };
+            await editListDialog.ShowAsync();
+            LoadIniFile();
         }
     }
 
@@ -158,6 +157,8 @@ public sealed partial class MainPage : Page
         {
             var iniFile = parser.ReadFile(PathApp + "List.ini");
 
+            FileListMenuItem.Items.Clear();
+
             for (var i = 0; i < iniFile.Sections.Count; i++)
             {
                 var item = new RadioMenuFlyoutItem
@@ -171,19 +172,13 @@ public sealed partial class MainPage : Page
         }
         catch (ParsingException ex)
         {
-            switch (ex.HResult)
-            {
-                case -2146233088:
-                    ShowWarning("WarningWords_DuplicateSections", FileMenuBar);
-                    break;
-            }
+            if (ex.HResult == -2146233088) ShowWarning("WarningWords_DuplicateSections", FileMenuBar);
         }
 
     }
 
     private void ShowWarning(string warningKey, FrameworkElement frameworkElement)
     {
-        //MainPageTextBlock.Text = warningKey.GetLocalized();
         WarningTeachingTip.Subtitle = warningKey.GetLocalized();
         WarningTeachingTip.Target = frameworkElement;
         WarningTeachingTip.IsOpen = true;
